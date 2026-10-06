@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BRUTAL / STUDIO — Creative Design & Digital Experience</title>
+
+  <!-- Fonts: Oswald (Oversized Brutalist Headlines), Inter (Body), Space Mono (Labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@600;700;900&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icon Font: Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+  <!-- Lenis Smooth Scroll CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.26/dist/lenis.css" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <link rel="stylesheet" href="assets/css/variable.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav-grid" aria-label="Main Navigation">
+      <div class="nav-cell brand-cell">
+        <a href="#hero">BRUTAL <span class="accent">/</span> STUDIO</a>
+      </div>
+      <a href="#work" class="nav-cell link-cell">WORK</a>
+      <a href="#about" class="nav-cell link-cell">ABOUT</a>
+      <a href="#services" class="nav-cell link-cell">SERVICES</a>
+      <a href="#journal" class="nav-cell link-cell">JOURNAL</a>
+      <a href="#contact" class="nav-cell link-cell">CONTACT</a>
+      <a href="#contact" class="nav-cell cta-cell">
+        <span>START A PROJECT</span>
+        <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </nav>
+
+    <!-- Mobile Header Bar -->
+    <div class="mobile-nav-toggle" id="mobile-toggle" role="button" aria-expanded="false"
+      aria-label="Toggle Mobile Menu">
+      <span>BRUTAL / STUDIO</span>
+      <i class="bi bi-list" id="toggle-icon"></i>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+      <a href="#work" class="mobile-menu-link">WORK <i class="bi bi-arrow-right"></i></a>
+      <a href="#about" class="mobile-menu-link">ABOUT <i class="bi bi-arrow-right"></i></a>
+      <a href="#services" class="mobile-menu-link">SERVICES <i class="bi bi-arrow-right"></i></a>
+      <a href="#journal" class="mobile-menu-link">JOURNAL <i class="bi bi-arrow-right"></i></a>
+      <a href="#contact" class="mobile-menu-link">CONTACT <i class="bi bi-arrow-right"></i></a>
+      <a href="#contact" class="mobile-menu-link" style="background: var(--color-yellow);">
+        START A PROJECT <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero-section" id="hero">
+      <div class="hero-left">
+        <div>
+          <div class="hero-eyebrow-container" data-aos="fade-down" data-aos-duration="600">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              AVAILABLE FOR Q4 / 2026
+            </div>
+            <span class="mono-label">[ STUDIO / EST. 2024 ]</span>
+          </div>
+
+          <h1 class="hero-title" data-aos="fade-up" data-aos-duration="800">
+            WE DESIGN<br />
+            WITHOUT<br />
+            RULES.
+          </h1>
+        </div>
+
+        <div class="hero-bottom-grid" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+          <div class="hero-desc">
+            A brutalist creative studio building bold brands, high-contrast visual systems, and digital experiences that
+            demand attention.
+          </div>
+          <a href="#work" class="btn-brutal">
+            <span>VIEW OUR WORK</span>
+            <i class="bi bi-arrow-down-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-visual-header">
+          <span>HAIRLINE_ENGINE_V1.0</span>
+          <span>[ INTERACTIVE_TERRAIN ]</span>
+        </div>
+        <div class="canvas-container">
+          <canvas id="hairline-canvas"></canvas>
+          <div class="canvas-overlay-tag">DRAG OR HOVER TO INTERACT</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item">
+          WE DON'T FOLLOW TRENDS <span class="star">★</span> <span class="highlight">WE SET DIRECTIONS</span> <span
+            class="star">★</span> BRUTALIST DESIGN STUDIO <span class="star">★</span> HIGH CONTRAST DIGITAL EXPERIENCES
+          <span class="star">★</span>
+        </div>
+        <div class="marquee-item">
+          WE DON'T FOLLOW TRENDS <span class="star">★</span> <span class="highlight">WE SET DIRECTIONS</span> <span
+            class="star">★</span> BRUTALIST DESIGN STUDIO <span class="star">★</span> HIGH CONTRAST DIGITAL EXPERIENCES
+          <span class="star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="work-section" id="work">
+      <div class="section-header-grid">
+        <div class="section-title-box">
+          <span class="mono-label">[ 01 / SELECTED WORK ]</span>
+          <h2 class="section-title" data-aos="fade-up">FEATURED<br />PROJECTS</h2>
+        </div>
+        <div class="section-action-box">
+          <a href="#contact" class="btn-brutal">
+            <span>ALL PROJECTS (14)</span>
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 01 -->
+        <article class="project-card" data-aos="fade-up" data-aos-duration="800">
+          <div class="project-card-header">
+            <span class="project-num">01 / 04</span>
+            <span class="project-tag">BRANDING & IDENTITY</span>
+          </div>
+          <div class="project-image-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+              alt="Concrete Vision Project Architecture" loading="lazy" />
+          </div>
+          <div class="project-card-footer">
+            <h3 class="project-title">CONCRETE VISION</h3>
+            <div class="project-meta-grid">
+              <span class="project-meta-item">ARCHITECTURAL STUDIO / 2026</span>
+              <i class="bi bi-arrow-up-right project-arrow-icon" aria-hidden="true"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02 (Red Accent Card) -->
+        <article class="project-card accent-red" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+          <div class="project-card-header">
+            <span class="project-num">02 / 04</span>
+            <span class="project-tag">WEB DESIGN & DEV</span>
+          </div>
+          <div class="project-image-wrap">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80"
+              alt="Gridline Studio Brutalist Web System" loading="lazy" />
+          </div>
+          <div class="project-card-footer">
+            <h3 class="project-title">GRIDLINE STUDIO</h3>
+            <div class="project-meta-grid">
+              <span class="project-meta-item">DIGITAL PUBLICATION / 2026</span>
+              <i class="bi bi-arrow-up-right project-arrow-icon" aria-hidden="true"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="project-card" data-aos="fade-up" data-aos-duration="800">
+          <div class="project-card-header">
+            <span class="project-num">03 / 04</span>
+            <span class="project-tag">DIGITAL STRATEGY</span>
+          </div>
+          <div class="project-image-wrap">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80"
+              alt="Forma Systems Industrial Identity" loading="lazy" />
+          </div>
+          <div class="project-card-footer">
+            <h3 class="project-title">FORMA SYSTEMS</h3>
+            <div class="project-meta-grid">
+              <span class="project-meta-item">INDUSTRIAL DESIGN / 2025</span>
+              <i class="bi bi-arrow-up-right project-arrow-icon" aria-hidden="true"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 04 -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+          <div class="project-card-header">
+            <span class="project-num">04 / 04</span>
+            <span class="project-tag">INTERACTIVE SOUND</span>
+          </div>
+          <div class="project-image-wrap">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80"
+              alt="Monolith Audio Visual Experience" loading="lazy" />
+          </div>
+          <div class="project-card-footer">
+            <h3 class="project-title">MONOLITH AUDIO</h3>
+            <div class="project-meta-grid">
+              <span class="project-meta-item">SPATIAL SOUND / 2025</span>
+              <i class="bi bi-arrow-up-right project-arrow-icon" aria-hidden="true"></i>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="statement-section" id="about">
+      <div class="statement-left">
+        <div class="graphic-accent-box">
+          <i class="bi bi-asterisk"></i>
+        </div>
+        <div>
+          <span class="mono-label">[ PHILOSOPHY ]</span>
+          <h2 class="statement-left-title">BUILT TO<br />DISRUPT.</h2>
+        </div>
+      </div>
+
+      <div class="statement-right">
+        <p class="statement-quote" data-aos="fade-up">
+          "We reject generic UI kits, safe color palettes, and predictable SaaS layouts. True digital distinction
+          requires visual courage."
+        </p>
+        <p class="statement-body" data-aos="fade-up" data-aos-delay="100">
+          BRUTAL / STUDIO operates at the intersection of Swiss grid precision and modern brutalist typography. We
+          collaborate with forward-thinking brands, architects, and technology pioneers to build digital artifacts that
+          leave a lasting mark.
+        </p>
+
+        <div class="pillars-grid" data-aos="fade-up" data-aos-delay="200">
+          <div class="pillar-item">
+            <h4>01 / RIGID GRID</h4>
+            <p>Every element is locked to a deliberate structural grid.</p>
+          </div>
+          <div class="pillar-item">
+            <h4>02 / ZERO SOFTNESS</h4>
+            <p>No gradients, no glassmorphic blur, no rounded cards.</p>
+          </div>
+          <div class="pillar-item">
+            <h4>03 / MAXIMUM SPEED</h4>
+            <p>Lean vanilla code executed with zero bloatware.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="section-header-grid">
+        <div class="section-title-box">
+          <span class="mono-label">[ 02 / CAPABILITIES ]</span>
+          <h2 class="section-title" data-aos="fade-up">OUR SERVICES</h2>
+        </div>
+        <div class="section-action-box">
+          <span class="mono-label">[ CLICK ITEM TO EXPAND ]</span>
+        </div>
+      </div>
+
+      <div class="accordion-list">
+
+        <!-- Accordion 01 -->
+        <div class="accordion-item active">
+          <button class="accordion-header" aria-expanded="true">
+            <span class="accordion-num">01</span>
+            <span class="accordion-title">BRANDING & IDENTITY</span>
+            <i class="bi bi-plus-lg accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner-grid">
+              <div></div>
+              <p class="accordion-desc">
+                Complete brand architectures built for long-term recognition. We craft bespoke wordmarks, typography
+                systems, editorial guidelines, and physical print suites.
+              </p>
+              <div class="accordion-deliverables">
+                <span class="deliverable-chip">VISUAL IDENTITY</span>
+                <span class="deliverable-chip">BRAND GUIDELINES</span>
+                <span class="deliverable-chip">TYPOGRAPHY</span>
+                <span class="deliverable-chip">PACKAGING</span>
+                <span class="deliverable-chip">ART DIRECTION</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 02 -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-num">02</span>
+            <span class="accordion-title">WEB DESIGN & UI/UX</span>
+            <i class="bi bi-plus-lg accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner-grid">
+              <div></div>
+              <p class="accordion-desc">
+                High-impact web systems designed to command attention. We eliminate template design in favor of sharp
+                grid-aligned layouts and strong typography.
+              </p>
+              <div class="accordion-deliverables">
+                <span class="deliverable-chip">EDITORIAL WEBSITES</span>
+                <span class="deliverable-chip">DESIGN SYSTEMS</span>
+                <span class="deliverable-chip">INTERACTION DESIGN</span>
+                <span class="deliverable-chip">PROTOTYPING</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 03 -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-num">03</span>
+            <span class="accordion-title">CREATIVE DEVELOPMENT</span>
+            <i class="bi bi-plus-lg accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner-grid">
+              <div></div>
+              <p class="accordion-desc">
+                Performant, accessible, production-grade frontend engineering using clean HTML5, CSS3, WebGL, and custom
+                Canvas interactive visuals.
+              </p>
+              <div class="accordion-deliverables">
+                <span class="deliverable-chip">VANILLA JS</span>
+                <span class="deliverable-chip">CANVAS 2D / WEBGL</span>
+                <span class="deliverable-chip">SMOOTH ANIMATIONS</span>
+                <span class="deliverable-chip">PERFORMANCE OPTIMIZATION</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion 04 -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-num">04</span>
+            <span class="accordion-title">DIGITAL STRATEGY</span>
+            <i class="bi bi-plus-lg accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-inner-grid">
+              <div></div>
+              <p class="accordion-desc">
+                Strategic positioning and campaign architecture for ambitious brands entering market expansion or
+                complete identity realignments.
+              </p>
+              <div class="accordion-deliverables">
+                <span class="deliverable-chip">POSITIONING</span>
+                <span class="deliverable-chip">CONTENT STRATEGY</span>
+                <span class="deliverable-chip">CAMPAIGN DIRECTION</span>
+                <span class="deliverable-chip">CREATIVE AUDITS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta-banner" id="contact">
+      <span class="mono-label" style="color: var(--color-yellow); margin-bottom: 1.5rem;">[ READY TO DISRUPT? ]</span>
+      <h2 class="cta-headline">LET'S CREATE SOMETHING DIFFERENT.</h2>
+      <a href="mailto:hello@brutalstudio.com" class="btn-brutal">
+        <span>INITIATE PROJECT ↗</span>
+      </a>
+    </section>
+
+    <!-- Newsletter Block -->
+    <section class="newsletter-block" id="journal">
+      <div class="newsletter-info">
+        <span class="mono-label">[ 03 / DISPATCH ]</span>
+        <h3 class="newsletter-title">THE BRUTAL DISPATCH</h3>
+        <p class="newsletter-desc">Monthly analysis on brutalist web design, typography, and creative technology.</p>
+      </div>
+      <div class="newsletter-form-container">
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" placeholder="ENTER YOUR EMAIL ADDRESS" required />
+          <button type="submit" class="newsletter-submit">SUBSCRIBE</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top-grid">
+      <div class="footer-col">
+        <div class="footer-brand">BRUTAL /</div>
+        <p class="mono-label" style="color: #888;">
+          A creative studio building bold brands and digital experiences that stand out.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">NAVIGATION</h4>
+        <ul class="footer-links">
+          <li><a href="#work">Featured Work</a></li>
+          <li><a href="#about">Studio Philosophy</a></li>
+          <li><a href="#services">Capabilities</a></li>
+          <li><a href="#journal">Dispatch</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">SOCIAL</h4>
+        <ul class="footer-links">
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+          <li><a href="https://behance.net" target="_blank" rel="noopener">Behance ↗</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener">X / Twitter ↗</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">HAIRLINE REFERENCE</h4>
+        <div class="hairline-ref-box">
+          <p>Interactive visual figure engine reference based on Lucas Markes' Hairline project.</p>
+          <div class="hairline-ref-links">
+            <a href="https://github.com/lucasmarkes/hairline" target="_blank" rel="noopener">
+              <i class="bi bi-github"></i> GitHub Repository ↗
+            </a>
+            <a href="https://hairline.lucasmarkes.com/" target="_blank" rel="noopener">
+              <i class="bi bi-globe"></i> Live Reference Demo ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <span>© 2026 BRUTAL / STUDIO. ALL RIGHTS RESERVED.</span>
+      <span>BUILT WITH VANILLA HTML / CSS / JS</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
