@@ -1,0 +1,16 @@
+:root {
+      --color-black: #0A0A0A;
+      --color-white: #F7F7F2;
+      --color-yellow: #F4E400;
+      --color-red: #FF2A1F;
+      --color-gray: #767670;
+      --color-gray-light: #E5E5DF;
+      --color-gray-dark: #1F1F1F;
+      
+      --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      
+      --border-thin: 1px solid var(--color-black);
+      --border-thick: 2px solid var(--color-black);
+    }
