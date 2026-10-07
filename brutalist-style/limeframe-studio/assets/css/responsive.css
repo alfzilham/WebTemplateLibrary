@@ -1,0 +1,23 @@
+@media (max-width: 520px) {
+  .site-header { padding: 17px 0; }
+  .nav-cta { display: none; }
+  .hero h1 { font-size: clamp(3.4rem, 18vw, 5rem); }
+  .hero-copy { font-size: 10px; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 15px; }
+  .hero-art { min-height: 275px; transform: scale(.85); margin: -15px 0; }
+  .client-row { gap: 28px; justify-content: flex-start; overflow-x: auto; }
+  .client-row::-webkit-scrollbar { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { min-height: 190px; }
+  .section-heading { align-items: start; flex-direction: column; gap: 17px; }
+  .statement { padding: 26px; }
+  .statement-art { transform: scale(.75); transform-origin: right center; margin: -24px 0 -20px; }
+  .cases-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .contact h2 { font-size: 3rem; }
+  .site-footer { align-items: flex-start; flex-direction: column; gap: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  [data-reveal] { opacity: 1; transform: none; }
+}
