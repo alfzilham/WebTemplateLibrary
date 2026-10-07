@@ -1,0 +1,14 @@
+:root {
+  --ink: #171717;
+  --paper: #f5f5f1;
+  --soft: #e8e8e3;
+  --lime: #b7ff2a;
+  --acid: #d5ff66;
+  --muted: #777772;
+  --line: 2px solid var(--ink);
+  --display: "Bodoni Moda", Georgia, serif;
+  --body: "DM Mono", "Courier New", monospace;
+  --radius-lg: 24px;
+  --radius-md: 14px;
+  --shadow: 7px 7px 0 var(--ink);
+}
