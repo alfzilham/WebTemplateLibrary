@@ -7,7 +7,8 @@ Kumpulan template website yang dikelompokkan berdasarkan visual style dan karakt
 ```text
 .templates/
 ├── brutalist-style/
-│   └── rawframe-studio/
+│   ├── rawframe-studio/
+│   └── limeframe-studio/
 ├── claymorphism-style/
 ├── glassmorphism-style/
 └── minimalist-style/
@@ -34,6 +35,7 @@ Contoh:
 
 ```text
 brutalist-style/rawframe-studio/
+brutalist-style/limeframe-studio/
 minimalist-style/quiet-archive/
 glassmorphism-style/lumen-dashboard/
 ```
