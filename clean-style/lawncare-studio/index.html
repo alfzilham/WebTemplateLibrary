@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Verdant Care — Premier local lawn care, landscaping, and property maintenance services for homeowners and commercial properties.">
+  <title>Verdant Care — Local Lawn & Property Care</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CDNs -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header / Navigation -->
+  <header id="site-header" class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Verdant Care Home">
+        <span class="logo-icon">
+          <i class="bi bi-flower1"></i>
+        </span>
+        <span class="logo-text">VERDANT<span class="logo-accent">.</span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#footer" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:5553829900" class="nav-phone">
+          <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+          <span>(555) 382-9900</span>
+        </a>
+        <a href="#cta" class="btn btn-lime btn-sm desktop-only">
+          <span>Get a Free Quote</span>
+          <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+        </a>
+        <button type="button" class="mobile-toggle" id="mobile-toggle-btn" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation menu">
+          <i class="bi bi-list icon-menu" aria-hidden="true"></i>
+          <i class="bi bi-x-lg icon-close" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-nav-drawer" id="mobile-navigation" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <ul class="mobile-nav-links">
+          <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+          <li><a href="#services" class="mobile-nav-link">Services</a></li>
+          <li><a href="#process" class="mobile-nav-link">Process</a></li>
+          <li><a href="#footer" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-cta">
+          <a href="tel:5553829900" class="btn btn-outline btn-full">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            <span>Call (555) 382-9900</span>
+          </a>
+          <a href="#cta" class="btn btn-lime btn-full mobile-close-cta">
+            <span>Get a Free Quote</span>
+            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-card" data-aos="fade-up" data-aos-duration="900">
+          <!-- Background Image & Overlay -->
+          <div class="hero-bg-media">
+            <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb12728?auto=format&fit=crop&w=1920&q=80" alt="Pristine green suburban lawn with clean mower lines" class="hero-img" loading="eager" decoding="async">
+            <div class="hero-overlay"></div>
+          </div>
+
+          <!-- Hairline Interactive Figure Container -->
+          <div id="hairline-figure" class="hairline-hero-canvas" aria-hidden="true"></div>
+
+          <!-- Hero Content -->
+          <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">
+              <span class="badge-dot"></span>
+              <span>LOCAL LAWN & PROPERTY CARE</span>
+            </div>
+
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+              A better-looking yard,<br>
+              <em class="serif-italic">without the extra work.</em>
+            </h1>
+
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+              Reliable mowing, landscaping, seasonal care, and property maintenance for homeowners and businesses across Greater Metro Area.
+            </p>
+
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+              <a href="#cta" class="btn btn-lime btn-lg">
+                <span>Get a Free Quote</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
+              <a href="tel:5553829900" class="btn btn-glass btn-lg">
+                <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                <span>Call (555) 382-9900</span>
+              </a>
+            </div>
+
+            <!-- Hero Trust Bar -->
+            <div class="hero-trust-bar" data-aos="fade-up" data-aos-delay="500">
+              <div class="trust-rating">
+                <div class="stars" aria-label="5 out of 5 stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <div class="rating-text">
+                  <strong>4.9 / 5</strong>
+                  <span>Local customer rating</span>
+                </div>
+              </div>
+
+              <div class="trust-divider" aria-hidden="true"></div>
+
+              <div class="trust-guarantee">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Licensed & Insured</strong>
+                  <span>Reliable service, every season</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Customer Proof Card -->
+          <div class="hero-proof-card" data-aos="fade-left" data-aos-delay="600">
+            <div class="proof-number">2K+</div>
+            <div class="proof-label">Happy Local Customers</div>
+            <div class="proof-avatars" aria-hidden="true">
+              <span class="avatar avatar-1"></span>
+              <span class="avatar avatar-2"></span>
+              <span class="avatar avatar-3"></span>
+              <span class="avatar-badge">+2k</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TRUSTED BY LOGO STRIP -->
+    <section id="trusted-by" class="logo-strip-section" aria-label="Trusted Partners">
+      <div class="container">
+        <p class="logo-strip-label" data-aos="fade-up">TRUSTED BY HOMEOWNERS & COMMERCIAL PROPERTIES ACROSS THE REGION</p>
+        <div class="logo-grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="logo-item" title="Apex Living Properties">
+            <svg viewBox="0 0 140 32" fill="currentColor" aria-hidden="true"><path d="M10 24L18 8L26 24H21.5L18 16.5L14.5 24H10ZM35 8H44C46.5 8 48 9.5 48 11.5C48 13.5 46.5 15 44 15H38.5V24H35V8ZM38.5 12H43.5C44.5 12 45 11.5 45 11C45 10.5 44.5 10 43.5 10H38.5V12ZM54 8H66V10.5H57.5V14.5H64.5V17H57.5V21.5H66.5V24H54V8ZM73 17L81 8H85.5L77.5 16.5L86 24H81.5L73 17Z"/></svg>
+            <span>APEX ESTATES</span>
+          </div>
+          <div class="logo-item" title="Evergreen Communities">
+            <svg viewBox="0 0 140 32" fill="currentColor" aria-hidden="true"><path d="M12 24V8H22C24.5 8 26 9.5 26 11.5C26 13 25 14.2 23.5 14.7L27 24H22.5L19.5 15.5H15.5V24H12ZM15.5 13H21.5C22.2 13 22.8 12.5 22.8 11.8C22.8 11 22.2 10.5 21.5 10.5H15.5V13ZM33 8H45V10.5H36.5V14.5H43.5V17H36.5V21.5H45.5V24H33V8ZM51 24L44 8H48.5L53.5 19.5L58.5 8H63L56 24H51Z"/></svg>
+            <span>EVERGREEN</span>
+          </div>
+          <div class="logo-item" title="Oakwood Heights HOA">
+            <svg viewBox="0 0 140 32" fill="currentColor" aria-hidden="true"><path d="M16 24.5C11 24.5 7 20.5 7 15.5C7 10.5 11 6.5 16 6.5C21 6.5 25 10.5 25 15.5C25 20.5 21 24.5 16 24.5ZM16 9.5C12.5 9.5 10 12 10 15.5C10 19 12.5 21.5 16 21.5C19.5 21.5 22 19 22 15.5C22 12 19.5 9.5 16 9.5ZM31 24V8H34.5V14.5H41.5V8H45V24H41.5V17.5H34.5V24H31Z"/></svg>
+            <span>OAKWOOD HOA</span>
+          </div>
+          <div class="logo-item" title="Pinnacle Commercial">
+            <svg viewBox="0 0 140 32" fill="currentColor" aria-hidden="true"><path d="M10 24V8H18C21.5 8 24 10.5 24 14C24 17.5 21.5 20 18 20H13.5V24H10ZM13.5 17H17.5C19.5 17 20.5 15.8 20.5 14C20.5 12.2 19.5 11 17.5 11H13.5V17ZM28 8H31.5V24H28V8ZM37 8H40.5L47.5 18V8H51V24H47.5L40.5 14V24H37V8Z"/></svg>
+            <span>PINNACLE</span>
+          </div>
+          <div class="logo-item" title="Highland Park Realty">
+            <svg viewBox="0 0 140 32" fill="currentColor" aria-hidden="true"><path d="M10 24V8H13.5V14.5H20.5V8H24V24H20.5V17.5H13.5V24H10ZM29 8H32.5V24H29V8ZM38 24.5C33 24.5 29 20.5 29 15.5C29 10.5 33 6.5 38 6.5C42.5 6.5 45.5 9.5 46 13.5H42.5C42 11.5 40.5 9.5 38 9.5C35 9.5 32.5 12 32.5 15.5C32.5 19 35 21.5 38 21.5C40.5 21.5 42 19.5 42.5 17.5H46C45.5 21.5 42.5 24.5 38 24.5Z"/></svg>
+            <span>HIGHLAND PARK</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          
+          <!-- About Media Column -->
+          <div class="about-media" data-aos="fade-right">
+            <div class="about-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1558904541-efa8c196b27d?auto=format&fit=crop&w=1000&q=80" alt="Landscape professional meticulously trimming garden edges" class="about-img" loading="lazy" decoding="async">
+              <div class="about-experience-badge">
+                <span class="exp-number">10+</span>
+                <span class="exp-label">Years Local Excellence</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Text Content Column -->
+          <div class="about-content" data-aos="fade-left">
+            <div class="section-eyebrow">
+              <i class="bi bi-patch-check-fill" aria-hidden="true"></i>
+              <span>ABOUT VERDANT CARE</span>
+            </div>
+
+            <h2 class="section-title">
+              The local team behind <br>
+              <em class="serif-italic">better properties.</em>
+            </h2>
+
+            <p class="about-lead">
+              We help homeowners and businesses keep their properties looking their best with dependable lawn care, landscaping, and seasonal maintenance.
+            </p>
+
+            <p class="about-body">
+              From routine precision mowing to full outdoor transformations, our goal is straightforward: clear communication, consistent service, and quality work you can rely on week after week.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <span>Uniformed, vetted local crew</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <span>Pro-grade commercial equipment</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <span>Transparent automated scheduling</span>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                <span>100% Satisfaction promise</span>
+              </div>
+            </div>
+
+            <div class="about-actions">
+              <a href="#cta" class="btn btn-lime">
+                <span>Get a Free Quote</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
+              <a href="tel:5553829900" class="btn btn-outline">
+                <i class="bi bi-telephone" aria-hidden="true"></i>
+                <span>Call Us (555) 382-9900</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="services-header" data-aos="fade-up">
+          <div class="header-left">
+            <div class="section-eyebrow">
+              <i class="bi bi-grid-fill" aria-hidden="true"></i>
+              <span>OUR SERVICES</span>
+            </div>
+            <h2 class="section-title">Everything your property needs.</h2>
+            <p class="section-subtitle">One dependable team for the work that keeps your property looking its best year-round.</p>
+          </div>
+
+          <div class="services-nav-controls" aria-label="Services carousel navigation">
+            <button type="button" class="carousel-btn prev-btn" id="service-prev" aria-label="Previous services">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="carousel-btn next-btn" id="service-next" aria-label="Next services">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Horizontal Rail / Track -->
+        <div class="service-track-wrapper">
+          <div class="service-track" id="service-track">
+
+            <!-- Card 1 -->
+            <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-media">
+                <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb12728?auto=format&fit=crop&w=800&q=80" alt="Commercial mower cutting rich green lawn" class="card-img" loading="lazy" decoding="async">
+                <div class="card-category">WEEKLY & BI-WEEKLY</div>
+              </div>
+              <div class="card-body">
+                <div class="card-header-row">
+                  <h3 class="card-title">Lawn Mowing</h3>
+                  <i class="bi bi-scissors card-icon" aria-hidden="true"></i>
+                </div>
+                <p class="card-text">Precision cutting, string trimming around obstacles, hard edge trimming, and thorough clipping blow-off every visit.</p>
+                <a href="#cta" class="card-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-media">
+                <img src="https://images.unsplash.com/photo-1584479898061-15742e14f50d?auto=format&fit=crop&w=800&q=80" alt="Thorough lawn dethatching and power raking equipment" class="card-img" loading="lazy" decoding="async">
+                <div class="card-category">TURF RESTORATION</div>
+              </div>
+              <div class="card-body">
+                <div class="card-header-row">
+                  <h3 class="card-title">Power Raking</h3>
+                  <i class="bi bi-layers card-icon" aria-hidden="true"></i>
+                </div>
+                <p class="card-text">Deep thatch layer removal, lawn aeration, and soil decompaction to allow air, water, and nutrients to reach root systems.</p>
+                <a href="#cta" class="card-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-media">
+                <img src="https://images.unsplash.com/photo-1628172904838-348231e51383?auto=format&fit=crop&w=800&q=80" alt="Spreading organic lawn fertilizer and weed treatment" class="card-img" loading="lazy" decoding="async">
+                <div class="card-category">SEASONAL NUTRITION</div>
+              </div>
+              <div class="card-body">
+                <div class="card-header-row">
+                  <h3 class="card-title">Fertilizing & Weed</h3>
+                  <i class="bi bi-droplet card-icon" aria-hidden="true"></i>
+                </div>
+                <p class="card-text">Custom multi-step fertilization schedules, pre-emergent weed prevention, and targeted broadleaf weed treatment for thick grass.</p>
+                <a href="#cta" class="card-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="service-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="card-media">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80" alt="Beautifully manicured garden beds with fresh dark mulch" class="card-img" loading="lazy" decoding="async">
+                <div class="card-category">DESIGN & CARE</div>
+              </div>
+              <div class="card-body">
+                <div class="card-header-row">
+                  <h3 class="card-title">Landscaping</h3>
+                  <i class="bi bi-tree card-icon" aria-hidden="true"></i>
+                </div>
+                <p class="card-text">Mulch installation, garden bed edging, shrub pruning, hedge shaping, flower planting, and complete garden refreshes.</p>
+                <a href="#cta" class="card-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="service-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="card-media">
+                <img src="https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80" alt="Autumn leaf clearing and seasonal yard prep" class="card-img" loading="lazy" decoding="async">
+                <div class="card-category">SPRING & FALL</div>
+              </div>
+              <div class="card-body">
+                <div class="card-header-row">
+                  <h3 class="card-title">Seasonal Cleanup</h3>
+                  <i class="bi bi-wind card-icon" aria-hidden="true"></i>
+                </div>
+                <p class="card-text">Comprehensive spring property wake-up, fall leaf vacuuming, debris haul-away, and bed preparation for dormant months.</p>
+                <a href="#cta" class="card-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="service-card" data-aos="fade-up" data-aos-delay="600">
+              <div class="card-media">
+                <img src="https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=800&q=80" alt="Winter snow removal truck and walkway clearing" class="card-img" loading="lazy" decoding="async">
+                <div class="card-category">WINTER SERVICES</div>
+              </div>
+              <div class="card-body">
+                <div class="card-header-row">
+                  <h3 class="card-title">Snow Removal</h3>
+                  <i class="bi bi-snow card-icon" aria-hidden="true"></i>
+                </div>
+                <p class="card-text">Prompt commercial & residential driveway plowing, sidewalk clearing, and eco-friendly de-icing services during winter storms.</p>
+                <a href="#cta" class="card-link">
+                  <span>Learn More</span>
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="process-section">
+      <div class="container">
+        <div class="process-intro" data-aos="fade-up">
+          <div class="section-eyebrow">
+            <i class="bi bi-diagram-3-fill" aria-hidden="true"></i>
+            <span>HOW IT WORKS</span>
+          </div>
+          <h2 class="section-title">
+            How we work,<br>
+            <em class="serif-italic">from start to finish.</em>
+          </h2>
+          <p class="section-subtitle">A straightforward 3-step system designed to eliminate lawn care hassle.</p>
+        </div>
+
+        <div class="process-grid">
+
+          <!-- Step 01 -->
+          <div class="process-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="process-number">01</div>
+            <div class="process-content">
+              <h3 class="process-title">Free Property Assessment</h3>
+              <p class="process-description">We evaluate your yard size, turf condition, soil needs, and slope to recommend the optimal seasonal care plan.</p>
+            </div>
+            <div class="process-icon-badge">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="process-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="process-number">02</div>
+            <div class="process-content">
+              <h3 class="process-title">Track Your Service Schedule</h3>
+              <p class="process-description">Receive automated notifications before our team arrives. Know exactly when your lawn is serviced and what was performed.</p>
+            </div>
+            <div class="process-icon-badge">
+              <i class="bi bi-calendar-event" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="process-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="process-number">03</div>
+            <div class="process-content">
+              <h3 class="process-title">Custom Quote & Property Plan</h3>
+              <p class="process-description">Receive transparent, itemized pricing tailored precisely to your property requirements with zero hidden fees or surprises.</p>
+            </div>
+            <div class="process-icon-badge">
+              <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <!-- Step 04 / Guarantee Card -->
+          <div class="process-card process-guarantee-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="guarantee-inner">
+              <i class="bi bi-shield-fill-check guarantee-icon" aria-hidden="true"></i>
+              <div>
+                <h3 class="process-title">Satisfaction Guaranteed</h3>
+                <p class="process-description">We stand firmly behind consistent communication and dependable craftsmanship. If you aren't thrilled, we re-service for free.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TESTIMONIAL SECTION -->
+    <section id="testimonials" class="testimonial-section">
+      <div class="container">
+        <div class="testimonial-card" data-aos="fade-up">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+
+          <blockquote class="testimonial-quote">
+            “Reliable, professional, and remarkably easy to work with. Our property has never looked better, and the communication from their crew is always top notch.”
+          </blockquote>
+
+          <div class="testimonial-author">
+            <div class="author-avatar-placeholder">AM</div>
+            <div class="author-info">
+              <strong class="author-name">Alex Morgan</strong>
+              <span class="author-role">Homeowner in Oakwood Hills</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FINAL CTA SECTION -->
+    <section id="cta" class="cta-section">
+      <div class="container">
+        <div class="cta-box" data-aos="fade-up">
+          <!-- Background decorative element -->
+          <div class="cta-bg-glow" aria-hidden="true"></div>
+
+          <div class="cta-content">
+            <div class="section-eyebrow eyebrow-light">
+              <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+              <span>GET STARTED TODAY</span>
+            </div>
+
+            <h2 class="cta-title">
+              Ready for a yard you can <br>
+              <em class="serif-italic">feel good about?</em>
+            </h2>
+
+            <p class="cta-subtitle">
+              Tell us what your property needs. We'll help you figure out the exact right schedule and deliver a fast, transparent quote.
+            </p>
+
+            <div class="cta-actions">
+              <a href="tel:5553829900" class="btn btn-lime btn-lg">
+                <span>Get a Free Quote</span>
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+              </a>
+              <a href="tel:5553829900" class="btn btn-glass-light btn-lg">
+                <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                <span>Call (555) 382-9900</span>
+              </a>
+            </div>
+
+            <div class="cta-foot-info">
+              <span><i class="bi bi-clock-history"></i> Quotes issued within 24 hours</span>
+              <span><i class="bi bi-shield-check"></i> No long-term contract locked</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer id="footer" class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Column 1: Brand Info -->
+        <div class="footer-col brand-col" data-aos="fade-up" data-aos-delay="100">
+          <a href="#hero" class="brand-logo footer-logo" aria-label="Verdant Care Home">
+            <span class="logo-icon"><i class="bi bi-flower1"></i></span>
+            <span class="logo-text">VERDANT<span class="logo-accent">.</span></span>
+          </a>
+          <p class="footer-desc">
+            Reliable lawn care, landscaping, and complete property maintenance services for Greater Metro Area.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Services Links -->
+        <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+          <h4 class="footer-col-title">SERVICES</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Lawn Mowing</a></li>
+            <li><a href="#services">Power Raking</a></li>
+            <li><a href="#services">Fertilizing & Weed</a></li>
+            <li><a href="#services">Landscaping</a></li>
+            <li><a href="#services">Seasonal Cleanup</a></li>
+            <li><a href="#services">Snow Removal</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company Links -->
+        <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+          <h4 class="footer-col-title">COMPANY</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#cta">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Info -->
+        <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+          <h4 class="footer-col-title">CONTACT</h4>
+          <div class="footer-contact-list">
+            <a href="tel:5553829900" class="contact-item">
+              <i class="bi bi-telephone" aria-hidden="true"></i>
+              <span>(555) 382-9900</span>
+            </a>
+            <a href="mailto:hello@verdantcare.example" class="contact-item">
+              <i class="bi bi-envelope" aria-hidden="true"></i>
+              <span>hello@verdantcare.example</span>
+            </a>
+            <div class="contact-item">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              <span>Greater Metro Area & Surrounding Suburbs</span>
+            </div>
+            <a href="#cta" class="btn btn-lime btn-sm footer-cta-btn">
+              <span>Get a Free Quote</span>
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Row -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 Verdant Property Care. All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="#">Terms of Service</a>
+          <span class="legal-divider">•</span>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Hairline ESM Loader + App JS Script -->
+  <script type="module" src="assets/js/main.js"></script>
+
+</body>
+</html>
