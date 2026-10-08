@@ -108,6 +108,8 @@ Sebelum commit:
 ## Root README dan Master
 
 - Perubahan project website dikirim melalui branch dan Pull Request.
+- Setiap penambahan folder template baru wajib memperbarui root `README.md`, termasuk tree struktur repository, daftar style, dan contoh project bila relevan.
+- Perubahan root `README.md` untuk folder template baru harus dibuat sebagai commit terpisah dan di-push langsung ke `master`, bukan ke branch feature/PR project tersebut.
 - Perubahan root `README.md` boleh di-push langsung ke `master` hanya jika user memintanya secara eksplisit.
 - Sebelum push langsung ke `master`, pastikan branch lokal sudah diselaraskan dengan `origin/master` dan jangan gunakan force push.
 
