@@ -8,7 +8,10 @@ Kumpulan template website yang dikelompokkan berdasarkan visual style dan karakt
 .templates/
 ├── brutalist-style/
 │   ├── rawframe-studio/
-│   └── limeframe-studio/
+│   ├── limeframe-studio/
+│   └── orange-ledger/
+├── clean-style/
+│   └── lawncare-studio/
 ├── claymorphism-style/
 ├── glassmorphism-style/
 └── minimalist-style/
@@ -19,6 +22,7 @@ Folder style dapat berisi satu atau lebih project website. Setiap project sebaik
 ## Style yang Tersedia
 
 - **Brutalist** — grid tegas, border kontras, tipografi besar, dan komposisi editorial.
+- **Clean** — whitespace lapang, tipografi terarah, palet natural, dan pengalaman visual yang fokus.
 - **Claymorphism** — permukaan lembut, bentuk dimensional, dan visual yang playful.
 - **Glassmorphism** — transparansi, blur, layering, dan efek kaca.
 - **Minimalist** — whitespace, hirarki tipografi, dan elemen visual yang terukur.
@@ -36,6 +40,8 @@ Contoh:
 ```text
 brutalist-style/rawframe-studio/
 brutalist-style/limeframe-studio/
+brutalist-style/orange-ledger/
+clean-style/lawncare-studio/
 minimalist-style/quiet-archive/
 glassmorphism-style/lumen-dashboard/
 ```
