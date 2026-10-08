@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARCHISTUDIO — Contemporary Architecture & Design Studio</title>
+  <meta name="description" content="Architecture shaped by context, light, and the way we live. Portfolio and studio of ARCHISTUDIO.">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <!-- Lenis CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.css">
+
+  <link rel="stylesheet" href="assets/css/variable.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+  <!-- Skip to main content link for screen readers & keyboard accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ==========================================================================
+       HEADER / NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand-logo" aria-label="ARCHISTUDIO Homepage">
+        ARCHISTUDIO <span class="dot"></span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu d-none-mobile">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Portfolio</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- REPLACEABLE CTA: Direct link to project inquiry -->
+        <a href="#contact" class="btn btn-primary d-none-mobile">Discuss a Project</a>
+
+        <button type="button" 
+                class="mobile-nav-toggle" 
+                id="mobileMenuBtn" 
+                aria-expanded="false" 
+                aria-controls="mobileNavOverlay"
+                aria-label="Toggle navigation menu">
+          <i class="bi bi-list" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true">
+    <nav aria-label="Mobile Navigation">
+      <ul class="mobile-nav-links">
+        <li><a href="#about" class="nav-link mobile-link">About</a></li>
+        <li><a href="#projects" class="nav-link mobile-link">Portfolio</a></li>
+        <li><a href="#services" class="nav-link mobile-link">Services</a></li>
+        <li><a href="#process" class="nav-link mobile-link">Process</a></li>
+        <li><a href="#contact" class="nav-link mobile-link">Contact</a></li>
+        <li style="margin-top: 1rem;">
+          <a href="#contact" class="btn btn-primary mobile-link">Discuss a Project</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="top" aria-labelledby="heroHeading">
+      <div class="container">
+        <div class="hero-title-wrapper" data-aos="fade-up" data-aos-duration="800">
+          <h1 class="hero-title" id="heroHeading">ARCHISTUDIO</h1>
+          <div class="hero-subtitle-grid">
+            <p class="hero-lead-text">
+              Architecture shaped by context, light, and the way we live. Crafting thoughtful spaces across scales.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                Explore Projects <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+              </a>
+              <a href="#about" class="btn btn-secondary">Our Studio</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Asymmetric Image Collage -->
+        <!-- REPLACEABLE IMAGES: High quality architecture photography placeholders -->
+        <div class="hero-collage" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+          <div class="collage-panel panel-1">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Monolithic concrete residential structure with natural timber accents" 
+                 width="1200" height="800" loading="eager">
+          </div>
+          <div class="collage-panel panel-2">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Minimalist modern villa interior bathed in warm morning light" 
+                 width="1000" height="900" loading="eager">
+          </div>
+          <div class="collage-panel panel-3">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" 
+                 alt="Glass facade framing surrounding pine forest context" 
+                 width="800" height="1000" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT SECTION
+         ========================================================================== -->
+    <section class="section-spacing" id="about" aria-labelledby="aboutHeading">
+      <div class="container">
+        <div class="about-grid">
+          <div data-aos="fade-up">
+            <div class="eyebrow-pill">
+              <i class="bi bi-pentagon-fill" aria-hidden="true"></i> About Us
+            </div>
+            <h2 class="about-heading" id="aboutHeading">
+              Designing spatial experiences that endure beyond trends.
+            </h2>
+          </div>
+          <div class="about-body" data-aos="fade-up" data-aos-delay="150">
+            <p>
+              ARCHISTUDIO is an independent architectural practice focused on residential, cultural, and adaptive reuse projects. We approach each brief with spatial clarity, structural honesty, and a deep respect for natural surroundings.
+            </p>
+            <p>
+              By combining rigorous material research with digital visualization, we create environments that feel refined yet human, minimalist yet inviting.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         STUDIO HIGHLIGHTS CARDS
+         ========================================================================== -->
+    <section class="section-spacing" style="padding-top: 0;" aria-labelledby="highlightsHeading">
+      <h2 id="highlightsHeading" class="visually-hidden" style="position: absolute; width: 1px; height: 1px; overflow: hidden;">Studio Highlights</h2>
+      <div class="container">
+        <div class="highlights-grid">
+          
+          <!-- Highlight Card 1 -->
+          <article class="highlight-card" data-aos="fade-up">
+            <!-- REPLACEABLE IMAGE -->
+            <img class="highlight-card-bg" 
+                 src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Architectural study model and glass detail" 
+                 loading="lazy">
+            <div class="highlight-card-overlay"></div>
+            <div class="highlight-card-content">
+              <!-- DEMO METRIC NOTE: Clearly tagged as customizable demo metrics -->
+              <div class="highlight-metric">
+                13+ <span class="demo-badge">Sample Metric</span>
+              </div>
+              <h3 class="highlight-title">Years of Architectural Practice</h3>
+              <p class="highlight-desc">
+                Over a decade delivering bespoke residential and commercial commissions globally with unyielding precision.
+              </p>
+              <div style="margin-top: 0.5rem;">
+                <a href="#contact" class="btn btn-secondary" style="background: rgba(0,0,0,0.4);">
+                  Inquire Studio Profile <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Highlight Card 2 -->
+          <article class="highlight-card" data-aos="fade-up" data-aos-delay="150">
+            <!-- REPLACEABLE IMAGE -->
+            <img class="highlight-card-bg" 
+                 src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Panoramic view of a timber pavilion cantilevered over water" 
+                 loading="lazy">
+            <div class="highlight-card-overlay"></div>
+            <div class="highlight-card-content">
+              <div class="highlight-metric">
+                150+ <span class="demo-badge">Sample Metric</span>
+              </div>
+              <h3 class="highlight-title">Spatial Concepts & Built Works</h3>
+              <p class="highlight-desc">
+                From intimate urban apartments to sprawling rural retreats tailored meticulously to human rhythms.
+              </p>
+              <div style="margin-top: 0.5rem;">
+                <a href="#projects" class="btn btn-secondary" style="background: rgba(0,0,0,0.4);">
+                  View Project Archive <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SELECTED PROJECTS
+         ========================================================================== -->
+    <section class="section-spacing" id="projects" aria-labelledby="projectsHeading">
+      <div class="container">
+        <div class="projects-header" data-aos="fade-up">
+          <div>
+            <div class="eyebrow-pill">
+              <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i> Selected Works
+            </div>
+            <h2 class="about-heading" id="projectsHeading">Featured Projects</h2>
+          </div>
+          <p style="max-width: 420px;">
+            A curated selection of our recent architectural and interior interventions.
+          </p>
+        </div>
+
+        <!-- Asymmetric Staggered Grid -->
+        <div class="projects-grid">
+          
+          <!-- Project 1 -->
+          <!-- REPLACEABLE CONTENT: Project details -->
+          <article class="project-card" data-aos="fade-up">
+            <a href="#contact" aria-label="View project details for Lumina Grove House">
+              <div class="project-image-wrap">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1000&q=80" 
+                     alt="Lumina Grove House - Modern concrete and glass residential pavilion" 
+                     loading="lazy">
+                <div class="project-card-action">
+                  <span class="btn-icon" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+                </div>
+              </div>
+              <div class="project-details">
+                <span class="project-meta">Residential — 2025</span>
+                <h3 class="project-title">Lumina Grove House</h3>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <a href="#contact" aria-label="View project details for Minimal Haven Apartment">
+              <div class="project-image-wrap">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" 
+                     alt="Minimal Haven Apartment - Monochromatic oak and microcement interior" 
+                     loading="lazy">
+                <div class="project-card-action">
+                  <span class="btn-icon" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+                </div>
+              </div>
+              <div class="project-details">
+                <span class="project-meta">Interior Design — 2024</span>
+                <h3 class="project-title">Minimal Haven Apartment</h3>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-aos="fade-up">
+            <a href="#contact" aria-label="View project details for Nordic Timber Retreat">
+              <div class="project-image-wrap">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80" 
+                     alt="Nordic Timber Retreat - Darkened cedar clad cabin nestled in pine forest" 
+                     loading="lazy">
+                <div class="project-card-action">
+                  <span class="btn-icon" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+                </div>
+              </div>
+              <div class="project-details">
+                <span class="project-meta">Architecture & Landscape — 2024</span>
+                <h3 class="project-title">Nordic Timber Retreat</h3>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <a href="#contact" aria-label="View project details for Urban Loft Signature">
+              <div class="project-image-wrap">
+                <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=80" 
+                     alt="Urban Loft Signature - Double height penthouse with steel frame windows" 
+                     loading="lazy">
+                <div class="project-card-action">
+                  <span class="btn-icon" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+                </div>
+              </div>
+              <div class="project-details">
+                <span class="project-meta">Renovation — 2023</span>
+                <h3 class="project-title">Urban Loft Signature</h3>
+              </div>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICES SECTION
+         ========================================================================== -->
+    <section class="section-spacing" id="services" aria-labelledby="servicesHeading">
+      <div class="container">
+        <div style="margin-bottom: 3.5rem;" data-aos="fade-up">
+          <div class="eyebrow-pill">
+            <i class="bi bi-layers-fill" aria-hidden="true"></i> Core Offerings
+          </div>
+          <h2 class="about-heading" id="servicesHeading">Our Disciplines</h2>
+        </div>
+
+        <div class="services-grid">
+          
+          <!-- Service 1 -->
+          <div class="service-card" data-aos="fade-up">
+            <div>
+              <div class="service-num">01 / DISCIPLINE</div>
+              <i class="bi bi-building service-icon" aria-hidden="true"></i>
+              <h3 class="service-title">Architecture</h3>
+              <p class="service-desc">Comprehensive architectural design from spatial concept through planning approval and site supervision.</p>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="service-num">02 / DISCIPLINE</div>
+              <i class="bi bi-intersect service-icon" aria-hidden="true"></i>
+              <h3 class="service-title">Interior Design</h3>
+              <p class="service-desc">Custom millwork, tactile material selection, lighting choreography, and spatial furniture curation.</p>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="service-num">03 / DISCIPLINE</div>
+              <i class="bi bi-box-seam service-icon" aria-hidden="true"></i>
+              <h3 class="service-title">3D Visualization</h3>
+              <p class="service-desc">Photorealistic atmospheric rendering, digital twin simulations, and immersive VR walkthroughs.</p>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div>
+              <div class="service-num">04 / DISCIPLINE</div>
+              <i class="bi bi-compass service-icon" aria-hidden="true"></i>
+              <h3 class="service-title">Feasibility & Advice</h3>
+              <p class="service-desc">Site analysis, environmental impact studies, zoning consultation, and financial feasibility audits.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROCESS & HAIRLINE INTEGRATION
+         ========================================================================== -->
+    <section class="section-spacing" id="process" aria-labelledby="processHeading">
+      <div class="container">
+        <div style="margin-bottom: 3.5rem;" data-aos="fade-up">
+          <div class="eyebrow-pill">
+            <i class="bi bi-diagram-3-fill" aria-hidden="true"></i> Methodology
+          </div>
+          <h2 class="about-heading" id="processHeading">How We Work</h2>
+        </div>
+
+        <div class="process-container">
+          
+          <!-- Sequential Steps -->
+          <div class="process-steps" data-aos="fade-up">
+            <div class="process-step">
+              <span class="step-number">01</span>
+              <div class="step-content">
+                <h3>Discovery & Site Brief</h3>
+                <p>Understanding site context, solar orientation, client lifestyle requirements, and environmental parameters.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span class="step-number">02</span>
+              <div class="step-content">
+                <h3>Concept & Form Development</h3>
+                <p>Iterative spatial sketching, 3D volumetric modeling, and material board exploration.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span class="step-number">03</span>
+              <div class="step-content">
+                <h3>Technical Design & Approval</h3>
+                <p>Precise execution drawings, engineering coordination, and regulatory permitting submittals.</p>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <span class="step-number">04</span>
+              <div class="step-content">
+                <h3>Delivery & Construction</h3>
+                <p>On-site quality monitoring, contractor collaboration, and final handover detailing.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hairline Interactive Figure Container -->
+          <!-- SECONDARY INTERACTION REFERENCE: Pointer-responsive SVG element -->
+          <div class="hairline-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="hairline-target" id="hairlineContainer" role="img" aria-label="Interactive interactive architectural wireframe study figure">
+              <!-- Fallback static SVG if Hairline module cannot load -->
+              <svg class="hairline-fallback-svg" viewBox="0 0 100 100" aria-hidden="true">
+                <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" />
+                <line x1="50" y1="10" x2="50" y2="90" />
+                <line x1="90" y1="30" x2="10" y2="70" />
+                <line x1="10" y1="30" x2="90" y2="70" />
+              </svg>
+            </div>
+            <p class="hairline-caption">Interactive Volumetric Study — Move Pointer Over Frame</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT / INQUIRY CTA SECTION
+         ========================================================================== -->
+    <section class="section-spacing" id="contact" aria-labelledby="contactHeading">
+      <div class="container">
+        <div class="cta-banner" data-aos="fade-up">
+          <div class="eyebrow-pill">
+            <i class="bi bi-chat-left-dots-fill" aria-hidden="true"></i> Start a Conversation
+          </div>
+          <h2 class="cta-heading" id="contactHeading">
+            Have a project in mind or an architectural site to discuss?
+          </h2>
+          <p class="cta-subtext">
+            We welcome inquiries for residential, commercial, and spatial consultancy projects worldwide.
+          </p>
+
+          <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <!-- REPLACEABLE CTA BUTTON: Update to studio email or contact page link -->
+            <a href="mailto:hello@archistudio-example.com?subject=Project%20Inquiry" class="btn btn-primary">
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i> Send Inquiry
+            </a>
+            <a href="#top" class="btn btn-secondary">
+              Back to Top <i class="bi bi-arrow-up" aria-hidden="true"></i>
+            </a>
+          </div>
+          
+          <p style="font-size: var(--font-xs); color: var(--color-text-subtle); margin-top: 0.5rem;">
+            <!-- PLACEHOLDER NOTE -->
+            Replace <code>hello@archistudio-example.com</code> with your verified studio contact address.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" aria-label="Site Footer">
+    <div class="container">
+      
+      <!-- Four-Column Desktop Grid -->
+      <div class="footer-grid">
+        
+        <!-- Column 1: Studio Intro -->
+        <div class="footer-col-brand">
+          <a href="#top" class="brand-logo" aria-label="ARCHISTUDIO Homepage">
+            ARCHISTUDIO <span class="dot"></span>
+          </a>
+          <p style="font-size: var(--font-sm); color: var(--color-text-muted); max-width: 320px;">
+            Contemporary architectural practice shaping spaces through light, material sensitivity, and structural restraint.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" class="social-icon-btn" aria-label="Instagram Profile" target="_blank" rel="noopener">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com" class="social-icon-btn" aria-label="LinkedIn Profile" target="_blank" rel="noopener">
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://pinterest.com" class="social-icon-btn" aria-label="Pinterest Profile" target="_blank" rel="noopener">
+              <i class="bi bi-pinterest" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="#top" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About Studio</a></li>
+            <li><a href="#projects" class="footer-link">Selected Projects</a></li>
+            <li><a href="#services" class="footer-link">Disciplines</a></li>
+            <li><a href="#process" class="footer-link">Design Process</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services Summary -->
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><span class="footer-link">Architectural Design</span></li>
+            <li><span class="footer-link">Interior Architecture</span></li>
+            <li><span class="footer-link">3D Visualization & VR</span></li>
+            <li><span class="footer-link">Site Feasibility & Planning</span></li>
+            <li><span class="footer-link">Sustainable Renovation</span></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact / Location Placeholder -->
+        <div>
+          <div class="footer-col-title">Inquiries</div>
+          <p class="footer-link" style="margin-bottom: 0.75rem;">
+            <!-- REPLACEABLE CONTACT PLACEHOLDER -->
+            Consultations by appointment.
+          </p>
+          <p class="footer-link" style="color: var(--color-accent); margin-bottom: 1.25rem;">
+             studio@archistudio-placeholder.com
+          </p>
+          <a href="#contact" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: var(--font-xs);">
+            Schedule Consultation
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Row: Copyright Left, Terms & Privacy Right -->
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="currentYear">2026</span> ARCHISTUDIO. All rights reserved.
+        </div>
+        <ul class="legal-links">
+          <!-- PLACEHOLDER LEGAL LINKS as specified in SPEC.md -->
+          <li><a href="terms-of-service.html" class="legal-link">Terms of Service</a></li>
+          <li><a href="privacy-policy.html" class="legal-link">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SCRIPTS & INTERACTIONS
+       ========================================================================== -->
+  
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Lenis Smooth Scroll Script -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Main Vanilla JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
