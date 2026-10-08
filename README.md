@@ -9,7 +9,8 @@ Kumpulan template website yang dikelompokkan berdasarkan visual style dan karakt
 ├── brutalist-style/
 │   ├── rawframe-studio/
 │   ├── limeframe-studio/
-│   └── orange-ledger/
+│   ├── orange-ledger/
+│   └── ember-agency/
 ├── clean-style/
 │   ├── lawncare-studio/
 │   └── business-alliance/
@@ -44,6 +45,7 @@ Contoh:
 brutalist-style/rawframe-studio/
 brutalist-style/limeframe-studio/
 brutalist-style/orange-ledger/
+brutalist-style/ember-agency/
 clean-style/lawncare-studio/
 clean-style/business-alliance/
 minimalist-style/noir-atelier/
