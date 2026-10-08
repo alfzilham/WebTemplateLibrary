@@ -1,0 +1,225 @@
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto; /* Handled by Lenis */
+  scrollbar-width: thin;
+  scrollbar-color: #72806f #eef1e8;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #eef1e8;
+}
+::-webkit-scrollbar-thumb {
+  background: #72806f;
+  border: 2px solid #eef1e8;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4e604f;
+}
+
+/* Accessibility Focus Visible */
+:focus-visible {
+  outline: 3px solid #5b8cff;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--green-950);
+  color: var(--lime);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  z-index: 9999;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 20px;
+}
+
+/* ==========================================================================
+   LAYOUT & CONTAINERS
+   ========================================================================== */
+.container {
+  width: min(var(--container-max), calc(100% - 32px));
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: min(var(--container-max), calc(100% - 64px));
+  }
+}
+
+/* Serif Emphasis Utility */
+.serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Section Common Headings */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(0.72rem, 0.69rem + 0.1vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green-800);
+  margin-bottom: 12px;
+}
+
+.section-eyebrow i {
+  font-size: 0.9em;
+  color: var(--green-700);
+}
+
+.eyebrow-light {
+  color: var(--lime);
+}
+.eyebrow-light i {
+  color: var(--lime);
+}
+
+.section-title {
+  font-size: clamp(2rem, 1.6rem + 1.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  color: var(--ink-soft);
+  max-width: 600px;
+  margin-top: 12px;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  min-height: 48px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-lime {
+  background-color: var(--lime);
+  color: var(--green-950);
+}
+.btn-lime:hover {
+  background-color: var(--lime-hover);
+  box-shadow: 0 8px 24px rgba(201, 243, 106, 0.35);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover {
+  background-color: var(--surface-soft);
+  border-color: var(--green-800);
+}
+
+.btn-glass {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.btn-glass:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.btn-glass-light {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.btn-glass-light:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+.btn-sm {
+  padding: 10px 18px;
+  font-size: 0.88rem;
+  min-height: 40px;
+}
+
+.btn-lg {
+  padding: 18px 32px;
+  font-size: 1.05rem;
+  min-height: 56px;
+}
+
+.btn-full {
+  width: 100%;
+}
+
