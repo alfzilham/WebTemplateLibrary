@@ -1,0 +1,31 @@
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --color-bg: #050505;
+      --color-surface: #0B0B0C;
+      --color-surface-2: #111112;
+      --color-surface-3: #18181A;
+      
+      --color-text: #F5F5F5;
+      --color-text-muted: #8A8A8F;
+      --color-text-subtle: #5C5C61;
+
+      --color-border: rgba(255, 255, 255, 0.08);
+      --color-border-strong: rgba(255, 255, 255, 0.18);
+      --color-glow: rgba(255, 255, 255, 0.12);
+      
+      --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "SF Mono", SFMono-Regular, ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+      --container-max: 1240px;
+    }
