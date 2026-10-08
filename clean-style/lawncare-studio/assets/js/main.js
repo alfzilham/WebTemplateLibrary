@@ -14,12 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!prefersReducedMotion && typeof Lenis !== "undefined") {
     lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 0.65,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      touchMultiplier: 2,
+      wheelMultiplier: 1.05,
+      touchMultiplier: 1,
     });
 
     function raf(time) {
@@ -37,9 +38,29 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 750,
       easing: "ease-out-cubic",
       offset: 60,
-      once: false,
-      mirror: true,
+      once: true,
+      mirror: false,
       disable: prefersReducedMotion,
+    });
+
+    // Recalculate after images/fonts load so content is not left in AOS's
+    // initial hidden state when the page is opened from a local static server.
+    window.addEventListener("load", () => AOS.refreshHard(), { once: true });
+
+    // If AOS cannot calculate positions, reveal the page instead of leaving
+    // every data-aos element invisible indefinitely.
+    window.setTimeout(() => {
+      const animatedElements = document.querySelectorAll("[data-aos]");
+      const hasAnimatedContent = document.querySelector("[data-aos].aos-animate");
+
+      if (!hasAnimatedContent) {
+        animatedElements.forEach((element) => element.classList.add("aos-animate"));
+      }
+    }, 1800);
+  } else {
+    // Keep the page usable if the optional animation CDN is unavailable.
+    document.querySelectorAll("[data-aos]").forEach((element) => {
+      element.classList.add("aos-animate");
     });
   }
 
