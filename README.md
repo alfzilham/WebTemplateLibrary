@@ -15,6 +15,7 @@ Kumpulan template website yang dikelompokkan berdasarkan visual style dan karakt
 │   └── business-alliance/
 ├── claymorphism-style/
 ├── glassmorphism-style/
+│   └── voidstack/
 └── minimalist-style/
     └── noir-atelier/
 ```
@@ -48,6 +49,7 @@ clean-style/business-alliance/
 minimalist-style/noir-atelier/
 minimalist-style/quiet-archive/
 glassmorphism-style/lumen-dashboard/
+glassmorphism-style/voidstack/
 ```
 
 Setiap project baru sebaiknya memiliki:
