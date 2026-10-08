@@ -75,6 +75,15 @@ Sebelum commit:
 4. Periksa struktur dengan `git status --short` dan pastikan tidak ada file di luar scope.
 5. Pastikan CSS terbagi sesuai tanggung jawab dan tidak ada blok CSS/JavaScript inline yang tertinggal tanpa alasan.
 
+## Issue dan Quickdraw
+
+- Setiap folder template baru harus memiliki satu GitHub Issue yang terkait langsung dengan project tersebut.
+- Buat Issue pada awal workflow dengan judul dan deskripsi yang spesifik terhadap folder/template yang sedang dikerjakan.
+- Issue harus merepresentasikan task nyata, seperti menambahkan landing page, merapikan struktur asset, atau menambahkan dokumentasi.
+- Setelah task kecil pada Issue benar-benar selesai, tutup Issue dalam waktu maksimal 5 menit sejak dibuat apabila target Quickdraw sedang dikejar.
+- Catat hasil validasi dan link Pull Request di Issue sebelum menutupnya bila waktunya memungkinkan.
+- Jangan membuat Issue duplikat untuk project yang sama tanpa alasan yang jelas.
+
 ## Branch, Commit, Push, dan Pull Request
 
 1. Ambil update terbaru dari remote sebelum membuat branch:
