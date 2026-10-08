@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BRUTAL — An editorial neo-brutalist creative digital agency building bold brands, interfaces, and iconic web experiences.">
+  <title>BRUTAL ® — Creative Digital Agency</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Lenis Smooth Scroll CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.css">
+
+  <!-- AOS Animation CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+  <link rel="stylesheet" href="assets/css/variable.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ==========================================================================
+       HEADER / NAVBAR
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <!-- Logo -->
+      <a href="#" class="brand-logo" aria-label="BRUTAL Creative Agency Home">
+        BRUTAL<span class="dot">®</span>
+      </a>
+      <span class="brand-subtitle">CREATIVE DIGITAL STUDIO</span>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Desktop -->
+      <a href="#contact" class="header-cta-desktop">
+        Start a Project <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-nav-overlay">
+        <i class="bi bi-list" id="menu-icon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="#work" class="mobile-nav-link">Work <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="#services" class="mobile-nav-link">Services <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="#about" class="mobile-nav-link">About <i class="bi bi-arrow-right"></i></a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact <i class="bi bi-arrow-right"></i></a></li>
+    </ul>
+
+    <div class="mobile-nav-footer">
+      <a href="#contact" class="mobile-cta-btn">
+        Start a Project <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN CONTENT
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Content Column -->
+          <div class="hero-content-left" data-aos="fade-up" data-aos-duration="900">
+            <span class="label-tag">
+              <i class="bi bi-record-fill" style="color: var(--color-orange);" aria-hidden="true"></i>
+              Independent Creative Agency
+            </span>
+
+            <h1 class="hero-heading">
+              WE<br>
+              DON'T<br>
+              DO<br>
+              <span class="orange">AVERAGE.</span>
+            </h1>
+
+            <div class="hero-subtext-box">
+              <p class="hero-subtext">
+                A creative digital studio building bold brands, interfaces and experiences that people remember.
+              </p>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#work" class="hero-btn-primary">
+                View Our Work <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual Column -->
+          <div class="hero-media-wrapper" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <div class="hero-orange-block" aria-hidden="true"></div>
+            
+            <div class="hero-image-frame">
+              <img 
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" 
+                alt="Editorial portrait representing creative vision and attitude"
+                width="800" 
+                height="1000"
+                priority
+              >
+            </div>
+
+            <!-- Decorative Rotating Badge -->
+            <div class="badge-circular" aria-hidden="true">
+              <svg class="badge-circular-text" viewBox="0 0 100 100">
+                <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                <text font-size="8.8" font-family="Space Grotesk" font-weight="bold" fill="#050505" letter-spacing="1.5">
+                  <textPath href="#circlePath">
+                    BRUTAL • CREATIVE AGENCY • VISION •
+                  </textPath>
+                </text>
+              </svg>
+              <div class="badge-circular-inner">B.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="services-header" data-aos="fade-up">
+          <div>
+            <span class="label-tag" style="color: var(--color-orange);">WHAT WE DO</span>
+            <h2 class="services-title">CORE CAPABILITIES</h2>
+          </div>
+          <p style="color: #A0A0A0; max-width: 400px; font-family: var(--font-mono); font-size: 0.9rem;">
+            END-TO-END DIGITAL CRAFT FOR BRANDS THAT REFUSE TO BLEND IN WITH THE BACKGROUND.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 01 -->
+          <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="service-number">01 /</div>
+              <h3 class="service-name">BRANDING & IDENTITY</h3>
+              <p class="service-desc">Strategic branding that builds instant recognition, attitude, and lasting cultural relevance.</p>
+            </div>
+            <a href="#contact" class="service-icon-link" aria-label="Learn more about Branding and Identity">
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <!-- Service 02 -->
+          <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="service-number">02 /</div>
+              <h3 class="service-name">WEB DESIGN & DEV</h3>
+              <p class="service-desc">Crafting digital experiences and platforms that perform flawlessly across all screen sizes.</p>
+            </div>
+            <a href="#contact" class="service-icon-link" aria-label="Learn more about Web Design and Development">
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <!-- Service 03 -->
+          <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div>
+              <div class="service-number">03 /</div>
+              <h3 class="service-name">CONTENT & CAMPAIGNS</h3>
+              <p class="service-desc">High-impact editorial storytelling, photography, and digital campaigns that engage.</p>
+            </div>
+            <a href="#contact" class="service-icon-link" aria-label="Learn more about Content and Campaigns">
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <!-- Service 04 -->
+          <article class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <div>
+              <div class="service-number">04 /</div>
+              <h3 class="service-name">STRATEGY & CONSULTING</h3>
+              <p class="service-desc">Data-driven strategies and sharp positioning that unlock scalable commercial growth.</p>
+            </div>
+            <a href="#contact" class="service-icon-link" aria-label="Learn more about Strategy and Consulting">
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO CTA SECTION -->
+    <section class="manifesto-section">
+      <div class="container manifesto-container">
+        <h2 class="manifesto-title" data-aos="fade-up">
+          STOP USING <br>
+          <span class="orange">BORING WEB</span> <br>
+          TEMPLATES.
+        </h2>
+
+        <div class="manifesto-bottom" data-aos="fade-up" data-aos-delay="200">
+          <p class="manifesto-subtext">
+            STAND OUT. BREAK RULES. BUILD SOMETHING ICONIC.
+          </p>
+          <a href="#contact" class="btn-orange-lg">
+            Let's Build Something Different <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK SECTION -->
+    <section class="work-section" id="work">
+      <div class="container">
+        <div class="work-section-header" data-aos="fade-up">
+          <div>
+            <span class="label-tag">PORTFOLIO</span>
+            <h2 class="section-title">FEATURED WORK</h2>
+          </div>
+          <span class="label-tag" style="color: var(--color-orange);">[ 2024 — 2026 ARCHIVE ]</span>
+        </div>
+
+        <div class="work-grid">
+          <!-- Project 01 -->
+          <article class="work-card" data-aos="fade-up">
+            <div class="work-card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80" 
+                alt="Elevate Apparel Brand Design Concept" 
+                loading="lazy" 
+                width="800" 
+                height="500"
+              >
+            </div>
+            <div class="work-card-content">
+              <div class="work-card-meta">
+                <span>01 /</span>
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+              <h3 class="work-card-title">ELEVATE APPAREL</h3>
+              <p class="work-card-category">Branding, Web Design</p>
+            </div>
+          </article>
+
+          <!-- Project 02 -->
+          <article class="work-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="work-card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" 
+                alt="Nexus Tech Web Development Platform" 
+                loading="lazy" 
+                width="800" 
+                height="500"
+              >
+            </div>
+            <div class="work-card-content">
+              <div class="work-card-meta">
+                <span>02 /</span>
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+              <h3 class="work-card-title">NEXUS TECH</h3>
+              <p class="work-card-category">Web Development</p>
+            </div>
+          </article>
+
+          <!-- Project 03 -->
+          <article class="work-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="work-card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" 
+                alt="Vision Studios Campaign Imagery" 
+                loading="lazy" 
+                width="800" 
+                height="500"
+              >
+            </div>
+            <div class="work-card-content">
+              <div class="work-card-meta">
+                <span>03 /</span>
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+              <h3 class="work-card-title">VISION STUDIOS</h3>
+              <p class="work-card-category">Branding, Campaigns</p>
+            </div>
+          </article>
+
+          <!-- Project 04 -->
+          <article class="work-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="work-card-media">
+              <img 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" 
+                alt="Cloud Nine Digital Experience Art direction" 
+                loading="lazy" 
+                width="800" 
+                height="500"
+              >
+            </div>
+            <div class="work-card-content">
+              <div class="work-card-meta">
+                <span>04 /</span>
+                <i class="bi bi-arrow-up-right"></i>
+              </div>
+              <h3 class="work-card-title">CLOUD NINE</h3>
+              <p class="work-card-category">Digital Experience</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / PHILOSOPHY SECTION -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text-content" data-aos="fade-right">
+            <span class="label-tag">PHILOSOPHY</span>
+            <h2 class="about-heading">
+              WE MAKE <br>
+              DIGITAL FEEL <br>
+              <span style="color: var(--color-orange);">DIFFERENT.</span>
+            </h2>
+            <p class="about-body">
+              We combine strategy, design, and experimental technology to create digital experiences with a sharp point of view. We don't conform to predictable corporate UI trends—we engineer memorable digital artifacts.
+            </p>
+          </div>
+
+          <!-- Editorial Hairline Interactive Frame -->
+          <div class="hairline-frame" data-aos="fade-left" data-aos-delay="200">
+            <figure id="hairline-figure" aria-label="Interactive generative wireframe graphic"></figure>
+            <div class="hairline-caption">INTERACTIVE LINE ILLUSTRATION // HAIRLINE ENGINE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="container contact-container" data-aos="fade-up">
+        <span class="label-tag" style="color: var(--color-orange);">GET IN TOUCH</span>
+        <h2 class="contact-heading">
+          HAVE A PROJECT IN MIND? <br>
+          LET'S MAKE IT UNFORGETTABLE.
+        </h2>
+
+        <a href="mailto:hello@example.com" class="contact-email-link">
+          hello@example.com
+        </a>
+
+        <div>
+          <a href="mailto:hello@example.com" class="hero-btn-primary">
+            Start A Project <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER SECTION
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-col">
+          <div class="footer-brand">BRUTAL<span>®</span></div>
+          <p class="footer-desc">
+            A neo-brutalist creative digital agency crafting iconic brands, websites, and editorial digital platforms.
+          </p>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">EXPLORE</h3>
+          <ul class="footer-links">
+            <li><a href="#work" class="footer-link">Work</a></li>
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">SERVICES</h3>
+          <ul class="footer-links">
+            <li><a href="#services" class="footer-link">Branding & Identity</a></li>
+            <li><a href="#services" class="footer-link">Web Design</a></li>
+            <li><a href="#services" class="footer-link">Development</a></li>
+            <li><a href="#services" class="footer-link">Content & Campaigns</a></li>
+            <li><a href="#services" class="footer-link">Strategy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">CONTACT</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@example.com" class="footer-link">hello@example.com</a></li>
+            <li><a href="tel:+628123456789" class="footer-link">+62 812 3456 7890</a></li>
+            <li style="color: #888888; font-size: 0.95rem;">Jakarta / Indonesia</li>
+            <li style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+              <a href="#" class="footer-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="footer-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="footer-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="footer-bottom-row">
+        <div>
+          © 2026 BRUTAL CREATIVE AGENCY. ALL RIGHTS RESERVED.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Terms of Service</a>
+          <span>/</span>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SCRIPTS & DEPENDENCIES
+       ========================================================================== -->
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Hairline Module Import -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
