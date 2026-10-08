@@ -7,10 +7,11 @@
       let lenis = null;
       if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
         lenis = new Lenis({
-          duration: 1.2,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          duration: 0.55,
+          easing: (t) => 1 - Math.pow(1 - t, 3),
           smoothWheel: true,
-          touchMultiplier: 1.5
+          wheelMultiplier: 1.1,
+          touchMultiplier: 1
         });
 
         function raf(time) {
