@@ -1,0 +1,71 @@
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 32px;
+      }
+    }
+    @media (min-width: 992px) {
+      .nav-links {
+        display: flex;
+      }
+      .mobile-toggle {
+        display: none;
+      }
+    }
+    @media (min-width: 768px) {
+      .intro-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (min-width: 640px) {
+      .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .workflow-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (min-width: 992px) {
+      .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .bento-span-2 {
+        grid-column: span 2;
+      }
+      .bento-span-3 {
+        grid-column: span 3;
+      }
+    }
+    @media (min-width: 992px) {
+      .terminal-body {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (min-width: 640px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 992px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+      }
+    }
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      #terrain-canvas {
+        display: none;
+      }
+    }
