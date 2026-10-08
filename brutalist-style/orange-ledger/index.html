@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinGuard — Secure Your Financial Future</title>
+  <meta name="description" content="Trusted protection and expert guidance for your finances. Manage, track, and secure your financial future with FinGuard." />
+
+  <!-- CDN Imports -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       DESIGN TOKENS & RESET
+       ========================================================================== */
+    :root {
+      --orange: #FF4A0A;
+      --orange-hover: #FF6126;
+      --black: #050505;
+      --black-soft: #111111;
+      --white: #FFFFFF;
+      --gray-50: #FAFAFA;
+      --gray-100: #EFEFEF;
+      --gray-200: #E2E2E2;
+      --gray-400: #999999;
+      --gray-700: #333333;
+      --gray-800: #1C1C1C;
+      --content-width: 1280px;
+      --page-gutter: clamp(1rem, 4vw, 3rem);
+      --font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: auto; /* Handled by Lenis */
+      scrollbar-color: var(--orange) var(--black);
+      scrollbar-width: thin;
+      background-color: var(--black);
+      color: var(--black);
+      font-family: var(--font-family);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* CUSTOM WEBKIT SCROLLBAR */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--black);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--orange);
+      border-radius: 999px;
+      border: 3px solid var(--black);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--orange-hover);
+    }
+
+    body {
+      background-color: var(--black);
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    /* ACCESSIBILITY FOCUS STATES */
+    :focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--orange);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      z-index: 10000;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* CONTAINER UTILITY */
+    .container {
+      width: min(calc(100% - (2 * var(--page-gutter))), var(--content-width));
+      margin-inline: auto;
+    }
+
+    /* TYPOGRAPHY HELPERS */
+    .eyebrow {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      padding: 1.25rem 0;
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease;
+    }
+
+    .navbar--hidden {
+      transform: translateY(-110%);
+    }
+
+    .navbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.04em;
+    }
+
+    .brand i {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .btn-nav {
+      background: var(--orange);
+      color: var(--white);
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: background 0.2s ease, transform 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-nav:hover {
+      background: var(--orange-hover);
+      transform: translateY(-2px);
+    }
+
+    .hamburger {
+      display: none;
+      color: var(--white);
+      font-size: 1.75rem;
+      padding: 0.25rem;
+    }
+
+    /* MOBILE MENU OVERLAY */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 998;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      padding: 2rem;
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-menu a {
+      color: var(--white);
+      font-size: 1.75rem;
+      font-weight: 800;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      background-color: var(--black);
+      color: var(--white);
+      padding-top: clamp(8rem, 16vh, 12rem);
+      padding-bottom: clamp(4rem, 8vh, 8rem);
+      overflow: hidden;
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero__headline {
+      font-size: clamp(3rem, 7.5vw, 6.5rem);
+      font-weight: 900;
+      line-height: 0.88;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero__subtext {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--gray-400);
+      line-height: 1.5;
+      max-width: 480px;
+      margin-bottom: 2.25rem;
+      font-weight: 400;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-primary-lg {
+      background: var(--orange);
+      color: var(--white);
+      padding: 1.1rem 2.2rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 30px rgba(255, 74, 10, 0.3);
+    }
+
+    .btn-primary-lg:hover {
+      background: var(--orange-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(255, 74, 10, 0.45);
+    }
+
+    .btn-circle-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.25rem;
+      transition: all 0.25s ease;
+    }
+
+    .btn-circle-icon:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+      transform: scale(1.08);
+    }
+
+    /* HERO TRUST BADGE */
+    .hero__trust {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1rem 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      width: fit-content;
+    }
+
+    .avatar-stack {
+      display: flex;
+    }
+
+    .avatar-stack span {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid var(--black);
+      background-size: cover;
+      background-position: center;
+      margin-left: -10px;
+      display: inline-block;
+    }
+    .avatar-stack span:first-child { margin-left: 0; }
+
+    .trust-info h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .trust-info p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      margin-top: 0.2rem;
+    }
+
+    /* HERO RIGHT STACK VISUAL */
+    .hero__visual {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* HAIRLINE DECORATIVE CONTAINER */
+    .hairline-container {
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 220px;
+      height: 220px;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.75;
+    }
+
+    /* CARD STACK COMPOSITION */
+    .card-stack {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      height: 280px;
+      perspective: 1000px;
+      z-index: 1;
+    }
+
+    .fin-card {
+      position: absolute;
+      width: 100%;
+      height: 230px;
+      border-radius: 24px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .fin-card--black {
+      background: #111111;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--white);
+      transform: translateY(-20px) rotate(-8deg) scale(0.92);
+      z-index: 1;
+    }
+
+    .fin-card--silver {
+      background: linear-gradient(135deg, #D8D8D8 0%, #A0A0A0 100%);
+      color: var(--black);
+      transform: translateY(-5px) rotate(-2deg) scale(0.96);
+      z-index: 2;
+    }
+
+    .fin-card--orange {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(20px) rotate(4deg);
+      z-index: 3;
+    }
+
+    .card-stack:hover .fin-card--black { transform: translateY(-40px) rotate(-12deg) scale(0.92); }
+    .card-stack:hover .fin-card--silver { transform: translateY(-15px) rotate(-4deg) scale(0.96); }
+    .card-stack:hover .fin-card--orange { transform: translateY(10px) rotate(2deg); }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-top .chip {
+      width: 42px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 6px;
+    }
+    .card-top .brand-tag {
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      font-size: 1.1rem;
+    }
+
+    .card-number {
+      font-size: 1.25rem;
+      font-family: monospace;
+      letter-spacing: 0.15em;
+      margin: 1rem 0;
+    }
+
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* PROCESS RAIL */
+    .process-rail {
+      margin-top: 2.5rem;
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 2;
+    }
+
+    .process-step {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.25rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .process-step:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--orange);
+    }
+
+    .process-step span {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .process-step .num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    /* ==========================================================================
+       ABOUT / TRUST METRICS
+       ========================================================================== */
+    .about {
+      background-color: var(--white);
+      color: var(--black);
+      padding: clamp(5rem, 10vh, 9rem) 0;
+    }
+
+    .about__header {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      align-items: flex-start;
+    }
+
+    .about__title {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .about__description {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--gray-700);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* METRICS GRID */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.8fr;
+      gap: 1.5rem;
+    }
+
+    .metric-card {
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card--orange {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .metric-card--black {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .metric-card--gray {
+      background: var(--gray-100);
+      color: var(--black);
+    }
+
+    .metric-value {
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .metric-desc {
+      font-size: 0.95rem;
+      line-height: 1.45;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    /* ==========================================================================
+       FEATURES SECTION
+       ========================================================================== */
+    .features {
+      background-color: var(--gray-50);
+      color: var(--black);
+      padding: clamp(5rem, 10vh, 9rem) 0;
+      position: relative;
+    }
+
+    .features__header {
+      max-width: 650px;
+      margin-bottom: 4rem;
+    }
+
+    .features__title {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .features__subtext {
+      font-size: 1.1rem;
+      color: var(--gray-700);
+      line-height: 1.5;
+    }
+
+    .features__content {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .feature-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.75rem 2rem;
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--gray-200);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .feature-row:hover, .feature-row.active {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    .feature-row__left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .feature-num {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--gray-400);
+    }
+    .feature-row.active .feature-num {
+      color: var(--orange);
+    }
+
+    .feature-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .feature-row .btn-circle-icon {
+      border-color: var(--gray-200);
+      color: var(--black);
+    }
+
+    .feature-row.active .btn-circle-icon {
+      border-color: rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      background: var(--orange);
+    }
+
+    /* DASHBOARD MOCKUP */
+    .dashboard-mockup {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--gray-200);
+    }
+
+    .dash-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .dash-header h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .dash-metrics {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .dash-metric-item span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      margin-bottom: 0.25rem;
+    }
+    .dash-metric-item strong {
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+
+    .progress-bar-stack {
+      height: 10px;
+      border-radius: 999px;
+      background: var(--gray-100);
+      display: flex;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .progress-bar-stack .seg-1 { width: 67%; background: var(--orange); }
+    .progress-bar-stack .seg-2 { width: 14%; background: var(--black); }
+    .progress-bar-stack .seg-3 { width: 19%; background: var(--gray-400); }
+
+    .dash-transactions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .dash-tx {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px dashed var(--gray-200);
+    }
+    .dash-tx:last-child { border-bottom: none; }
+
+    .dash-user {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .dash-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .dash-user-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .status-badge {
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    .status-badge--success {
+      background: rgba(16, 185, 129, 0.12);
+      color: #059669;
+    }
+
+    .status-badge--pending {
+      background: rgba(245, 158, 11, 0.12);
+      color: #D97706;
+    }
+
+    /* ==========================================================================
+       BENEFITS SECTION
+       ========================================================================== */
+    .benefits {
+      background-color: var(--white);
+      color: var(--black);
+      padding: clamp(5rem, 10vh, 9rem) 0;
+    }
+
+    .benefits__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .benefits__visual {
+      position: relative;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .benefit-card-1 {
+      position: absolute;
+      width: 80%;
+      max-width: 360px;
+      height: 220px;
+      background: var(--orange);
+      border-radius: 24px;
+      color: var(--white);
+      padding: 1.75rem;
+      transform: rotate(-6deg) translateY(-20px);
+      box-shadow: 0 20px 40px rgba(255, 74, 10, 0.25);
+    }
+
+    .benefit-card-2 {
+      position: absolute;
+      width: 80%;
+      max-width: 360px;
+      height: 220px;
+      background: var(--black);
+      border-radius: 24px;
+      color: var(--white);
+      padding: 1.75rem;
+      transform: rotate(4deg) translateY(30px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .benefits__title {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .benefits-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      line-height: 1.4;
+    }
+
+    .benefits-list i {
+      color: var(--orange);
+      font-size: 1.25rem;
+      margin-top: 0.1rem;
+    }
+
+    /* ==========================================================================
+       TRUSTED PARTNERS
+       ========================================================================== */
+    .partners {
+      background-color: var(--black);
+      color: var(--white);
+      padding: clamp(5rem, 10vh, 9rem) 0;
+    }
+
+    .partners__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 5rem;
+    }
+
+    .partners__title {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .partners__desc {
+      font-size: 1.15rem;
+      color: var(--gray-400);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .partners__stat {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+    }
+
+    .partners__stat strong {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .partners__stat p {
+      color: var(--gray-400);
+      font-size: 0.95rem;
+    }
+
+    /* INTEGRATION TILES GRID */
+    .partner-tiles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 5rem;
+    }
+
+    .tile {
+      background: var(--orange);
+      border-radius: 24px;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--white);
+      font-size: 1.25rem;
+      font-weight: 800;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tile:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(255, 74, 10, 0.4);
+    }
+
+    .tile i {
+      font-size: 3rem;
+    }
+
+    .partners__footer-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .partners__footer-banner h3 {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      max-width: 550px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    /* ==========================================================================
+       TESTIMONIAL SECTION
+       ========================================================================== */
+    .testimonial {
+      background-color: var(--gray-100);
+      color: var(--black);
+      padding: clamp(5rem, 10vh, 9rem) 0;
+    }
+
+    .testimonial__inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: flex-end;
+    }
+
+    .quote-mark {
+      font-size: 5rem;
+      color: var(--orange);
+      line-height: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial__quote {
+      font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 2.5rem;
+      max-width: 900px;
+    }
+
+    .testimonial__author {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      border: 2px solid var(--white);
+    }
+
+    .author-info h4 {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+    .author-info p {
+      color: var(--gray-700);
+      font-size: 0.95rem;
+    }
+
+    .testimonial__controls {
+      display: flex;
+      gap: 1rem;
+    }
+
+    /* ==========================================================================
+       FINAL CTA
+       ========================================================================== */
+    .final-cta {
+      background-color: var(--orange);
+      color: var(--white);
+      padding: clamp(6rem, 12vh, 10rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .watermark-wordmark {
+      position: absolute;
+      bottom: -15%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(8rem, 28vw, 28rem);
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: rgba(0, 0, 0, 0.12);
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+      line-height: 0.8;
+    }
+
+    .final-cta__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    .final-cta__heading {
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-dark-lg {
+      background: var(--black);
+      color: var(--white);
+      padding: 1.25rem 2.75rem;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-dark-lg:hover {
+      background: var(--black-soft);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--black);
+      color: var(--white);
+      padding-top: 5rem;
+      padding-bottom: 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .footer__brand-col p {
+      color: var(--gray-400);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      max-width: 300px;
+    }
+
+    .footer__col h4 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer__col a {
+      color: var(--gray-400);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer__col a:hover {
+      color: var(--white);
+    }
+
+    /* COPYRIGHT ROW */
+    .copyright-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+      color: var(--gray-400);
+    }
+
+    .legal-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .legal-links a:hover {
+      color: var(--white);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero__grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .about__header, .features__content, .benefits__grid, .partners__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .partner-tiles {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .navbar .btn-nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .partners__footer-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .testimonial__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .copyright-row {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+    }
+
+    /* ==========================================================================
+       REDUCED MOTION PREFERENCES
+       ========================================================================== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .navbar {
+        transition: none !important;
+      }
+      .hairline-container {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ACCESSIBILITY SKIP LINK -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ==========================================================================
+       HEADER / NAVBAR
+       ========================================================================== -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <div class="container navbar__inner">
+        <a href="#" class="brand" aria-label="FinGuard Homepage">
+          <i class="bi bi-shield-lock-fill" aria-hidden="true"></i>
+          <span>FinGuard</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#partners">Partners</a></li>
+        </ul>
+
+        <a href="#cta" class="btn-nav">
+          Sign Up <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+        </a>
+
+        <button type="button" class="hamburger" id="menu-toggle" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation menu">
+          <i class="bi bi-list" id="menu-icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div class="mobile-menu" id="mobile-navigation" aria-hidden="true">
+      <ul>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#features" class="mobile-link">Features</a></li>
+        <li><a href="#benefits" class="mobile-link">Benefits</a></li>
+        <li><a href="#partners" class="mobile-link">Partners</a></li>
+      </ul>
+      <a href="#cta" class="btn-primary-lg mobile-link">
+        Get Started <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN CONTENT
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="container hero__grid">
+        <div class="hero__text-col" data-aos="fade-up" data-aos-duration="800">
+          <span class="eyebrow">Trusted Protection & Expert Guidance</span>
+          <h1 class="hero__headline">Secure Your<br />Financial Future</h1>
+          <p class="hero__subtext">
+            Trusted protection and expert guidance for your finances. Manage, scale, and safeguard your assets effortlessly.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#cta" class="btn-primary-lg">
+              Get Started <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a href="#about" class="btn-circle-icon" aria-label="Explore FinGuard details">
+              <i class="bi bi-arrow-down-short" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <!-- TRUST METRIC CARD -->
+          <div class="hero__trust">
+            <div class="avatar-stack">
+              <span style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80')"></span>
+              <span style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80')"></span>
+              <span style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80')"></span>
+            </div>
+            <div class="trust-info">
+              <h4>95K+</h4>
+              <p>Active Users Worldwide</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO RIGHT VISUAL STACK -->
+        <div class="hero__visual" data-aos="zoom-in" data-aos-duration="900" data-aos-delay="200">
+          <!-- Subtle Hairline Decorative Canvas -->
+          <div class="hairline-container">
+            <canvas id="hairline-canvas" width="220" height="220" aria-hidden="true"></canvas>
+          </div>
+
+          <!-- Financial Card Stack -->
+          <div class="card-stack" aria-label="FinGuard payment cards composition">
+            <div class="fin-card fin-card--black">
+              <div class="card-top">
+                <div class="chip"></div>
+                <span class="brand-tag">FinGuard Black</span>
+              </div>
+              <div class="card-number">•••• •••• •••• 9012</div>
+              <div class="card-bottom">
+                <span>PREMIUM MEMBER</span>
+                <span>08/29</span>
+              </div>
+            </div>
+
+            <div class="fin-card fin-card--silver">
+              <div class="card-top">
+                <div class="chip"></div>
+                <span class="brand-tag">FinGuard Platinum</span>
+              </div>
+              <div class="card-number">•••• •••• •••• 4581</div>
+              <div class="card-bottom">
+                <span>EXECUTIVE</span>
+                <span>11/28</span>
+              </div>
+            </div>
+
+            <div class="fin-card fin-card--orange">
+              <div class="card-top">
+                <div class="chip"></div>
+                <span class="brand-tag">FinGuard Core</span>
+              </div>
+              <div class="card-number">•••• •••• •••• 3340</div>
+              <div class="card-bottom">
+                <span>ALEX JOHNSON</span>
+                <span>05/30</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step Process Rail -->
+          <div class="process-rail">
+            <div class="process-step">
+              <span><strong class="num">1</strong> Selecting your provider</span>
+              <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+            </div>
+            <div class="process-step">
+              <span><strong class="num">2</strong> Set Up Your Account</span>
+              <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+            </div>
+            <div class="process-step">
+              <span><strong class="num">3</strong> Enjoy Seamless Banking</span>
+              <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT / TRUST METRICS
+         ========================================================================== -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about__header">
+          <div>
+            <span class="eyebrow">About Us</span>
+            <h2 class="about__title" data-aos="fade-up">Getting to Know FinGuard</h2>
+          </div>
+          <p class="about__description" data-aos="fade-up" data-aos-delay="150">
+            We are more than just a financial service provider; we are your trusted partner in navigating the complexities of modern wealth management with institutional security and AI-driven precision.
+          </p>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="metrics-grid">
+          <div class="metric-card metric-card--orange" data-aos="fade-up" data-aos-delay="100">
+            <div class="metric-value">500k</div>
+            <p class="metric-desc">
+              FinGuard rapidly attracting a substantial user base of over 500,000 active global customers within its first year.
+            </p>
+          </div>
+
+          <div class="metric-card metric-card--black" data-aos="fade-up" data-aos-delay="200">
+            <div class="metric-value">98%</div>
+            <p class="metric-desc">
+              Users enjoy significantly faster transaction processing time and seamless liquidity access.
+            </p>
+          </div>
+
+          <div class="metric-card metric-card--gray" data-aos="fade-up" data-aos-delay="300">
+            <div class="metric-value">24K</div>
+            <p class="metric-desc">
+              A expanding global network of over 20,000 partner ATMs and verified fee-free locations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURES SECTION
+         ========================================================================== -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="features__header" data-aos="fade-up">
+          <span class="eyebrow">Features</span>
+          <h2 class="features__title">All-in-One Platform for Savings</h2>
+          <p class="features__subtext">
+            Simplify your financial life by securely connecting your accounts and automatically categorizing real-time transactions.
+          </p>
+        </div>
+
+        <div class="features__content">
+          <!-- Interactive Feature List -->
+          <div class="feature-list" data-aos="fade-right">
+            <div class="feature-row active" tabindex="0" role="button" aria-pressed="true">
+              <div class="feature-row__left">
+                <span class="feature-num">01</span>
+                <span class="feature-name">Secure and Easy Transactions</span>
+              </div>
+              <span class="btn-circle-icon"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+            </div>
+
+            <div class="feature-row" tabindex="0" role="button" aria-pressed="false">
+              <div class="feature-row__left">
+                <span class="feature-num">02</span>
+                <span class="feature-name">Real-Time Financial Monitoring</span>
+              </div>
+              <span class="btn-circle-icon"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+            </div>
+
+            <div class="feature-row" tabindex="0" role="button" aria-pressed="false">
+              <div class="feature-row__left">
+                <span class="feature-num">03</span>
+                <span class="feature-name">Fast & Easy Transactions</span>
+              </div>
+              <span class="btn-circle-icon"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+            </div>
+
+            <div class="feature-row" tabindex="0" role="button" aria-pressed="false">
+              <div class="feature-row__left">
+                <span class="feature-num">04</span>
+                <span class="feature-name">Comprehensive Financial Planning</span>
+              </div>
+              <span class="btn-circle-icon"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+            </div>
+          </div>
+
+          <!-- Dashboard Mockup -->
+          <div class="dashboard-mockup" data-aos="fade-left" data-aos-delay="200">
+            <div class="dash-header">
+              <h4>Latest Invoice</h4>
+              <i class="bi bi-three-dots" aria-hidden="true"></i>
+            </div>
+
+            <div class="dash-metrics">
+              <div class="dash-metric-item">
+                <span>Completed</span>
+                <strong>67%</strong>
+              </div>
+              <div class="dash-metric-item">
+                <span>In Progress</span>
+                <strong>14%</strong>
+              </div>
+              <div class="dash-metric-item">
+                <span>Pending</span>
+                <strong>19%</strong>
+              </div>
+            </div>
+
+            <div class="progress-bar-stack" aria-hidden="true">
+              <div class="seg-1"></div>
+              <div class="seg-2"></div>
+              <div class="seg-3"></div>
+            </div>
+
+            <div class="dash-transactions">
+              <div class="dash-tx">
+                <div class="dash-user">
+                  <div class="dash-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80')"></div>
+                  <span class="dash-user-name">Kelly Williams</span>
+                </div>
+                <span class="status-badge status-badge--success">SUCCESS</span>
+              </div>
+
+              <div class="dash-tx">
+                <div class="dash-user">
+                  <div class="dash-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80')"></div>
+                  <span class="dash-user-name">John Terry</span>
+                </div>
+                <span class="status-badge status-badge--success">SUCCESS</span>
+              </div>
+
+              <div class="dash-tx">
+                <div class="dash-user">
+                  <div class="dash-avatar" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80')"></div>
+                  <span class="dash-user-name">Colin Clark</span>
+                </div>
+                <span class="status-badge status-badge--pending">PENDING</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BENEFITS SECTION
+         ========================================================================== -->
+    <section class="benefits" id="benefits">
+      <div class="container benefits__grid">
+        <div class="benefits__visual" data-aos="zoom-in">
+          <div class="benefit-card-1">
+            <i class="bi bi-credit-card-2-front" style="font-size: 2rem;" aria-hidden="true"></i>
+            <div style="margin-top: 1.5rem;">
+              <p style="font-size: 0.8rem; opacity: 0.8;">CASHBACK PRIVILEGE</p>
+              <h3 style="font-size: 1.5rem; font-weight: 800;">2% Instant Return</h3>
+            </div>
+          </div>
+          <div class="benefit-card-2">
+            <i class="bi bi-globe2" style="font-size: 2rem;" aria-hidden="true"></i>
+            <div style="margin-top: 1.5rem;">
+              <p style="font-size: 0.8rem; opacity: 0.8;">GLOBAL PROTECTION</p>
+              <h3 style="font-size: 1.5rem; font-weight: 800;">Worldwide Cover</h3>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-left">
+          <span class="eyebrow">Benefits</span>
+          <h2 class="benefits__title">Shopping on International</h2>
+
+          <ul class="benefits-list">
+            <li>
+              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+              <span>Get 2% cashback on all international purchases with zero hidden FX conversion markups.</span>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+              <span>Access exclusive travel deals and discounts on partner flights, premium lounges, and boutique hotels.</span>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+              <span>Includes global travel insurance and comprehensive purchase protection automatically on every transfer.</span>
+            </li>
+          </ul>
+
+          <a href="#cta" class="btn-primary-lg">
+            Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TRUSTED PARTNERS
+         ========================================================================== -->
+    <section class="partners" id="partners">
+      <div class="container">
+        <div class="partners__grid">
+          <div data-aos="fade-right">
+            <span class="eyebrow">Our Trusted Partners</span>
+            <h2 class="partners__title">Real-Time Financial Monitoring</h2>
+          </div>
+
+          <div data-aos="fade-left">
+            <p class="partners__desc">
+              Just like us, FinGuard believes in building long-term relationships with clients. Their focus on customer service aligns perfectly with our own values.
+            </p>
+
+            <div class="partners__stat">
+              <strong>98%</strong>
+              <p>Partners are happy with our collaboration, noting increased efficiency and mutual growth since joining us.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integration Tiles -->
+        <div class="partner-tiles" data-aos="fade-up">
+          <div class="tile" aria-label="Apple Pay Partner">
+            <i class="bi bi-apple" aria-hidden="true"></i>
+            <span>Apple Pay</span>
+          </div>
+          <div class="tile" aria-label="PayPal Partner">
+            <i class="bi bi-paypal" aria-hidden="true"></i>
+            <span>PayPal</span>
+          </div>
+          <div class="tile" aria-label="Transfer Partner">
+            <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+            <span>Transfer</span>
+          </div>
+          <div class="tile" aria-label="Google Pay Partner">
+            <i class="bi bi-google" aria-hidden="true"></i>
+            <span>Google Pay</span>
+          </div>
+        </div>
+
+        <div class="partners__footer-banner" data-aos="fade-up">
+          <h3>Creating Impactful Solutions and Lasting Partnerships</h3>
+          <a href="#cta" class="btn-primary-lg">
+            Let's Work Together <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIAL SECTION
+         ========================================================================== -->
+    <section class="testimonial" id="testimonial">
+      <div class="container">
+        <span class="eyebrow">What They Say About Us</span>
+
+        <div class="testimonial__inner">
+          <div data-aos="fade-right">
+            <div class="quote-mark" aria-hidden="true">“</div>
+            <blockquote class="testimonial__quote">
+              FinGuard has completely transformed the way I manage my finances. The real-time updates and personalized advice have been invaluable.
+            </blockquote>
+
+            <div class="testimonial__author">
+              <div class="author-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80')"></div>
+              <div class="author-info">
+                <h4>Kelly Williams</h4>
+                <p>Head of Design, Layers</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial__controls" data-aos="fade-left">
+            <button type="button" class="btn-circle-icon" aria-label="Previous testimonial">
+              <i class="bi bi-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="btn-circle-icon" aria-label="Next testimonial">
+              <i class="bi bi-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FINAL CTA
+         ========================================================================== -->
+    <section class="final-cta" id="cta">
+      <!-- Oversized Cropped Watermark -->
+      <div class="watermark-wordmark" aria-hidden="true">finguard</div>
+
+      <div class="container final-cta__content" data-aos="zoom-in">
+        <h2 class="final-cta__heading">Ready to Take Control of Your Financial Future</h2>
+        <a href="#" class="btn-dark-lg">
+          Get Started <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand-col">
+          <a href="#" class="brand">
+            <i class="bi bi-shield-lock-fill" aria-hidden="true"></i>
+            <span>FinGuard</span>
+          </a>
+          <p>
+            Securing your wealth and empowering your financial journey with high-performance digital solutions.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Collaboration</a></li>
+            <li><a href="#">Data Management</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Strategies</a></li>
+            <li><a href="#">E-books & Guides</a></li>
+            <li><a href="#">Webinars</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright-row">
+        <span>© 2026 FinGuard. All rights reserved.</span>
+        <div class="legal-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* 1. LENIS SMOOTH SCROLL INITIALIZATION */
+      let lenis;
+      if (typeof Lenis !== 'undefined') {
+        lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          touchMultiplier: 2
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      }
+
+      /* 2. AOS ANIMATIONS INITIALIZATION */
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 750,
+          easing: 'ease-out-cubic',
+          once: true,
+          disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        });
+      }
+
+      /* 3. AUTO-HIDE NAVBAR ON SCROLL */
+      const navbar = document.getElementById('navbar');
+      let lastScrollY = window.scrollY;
+
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        const mobileNav = document.getElementById('mobile-navigation');
+        const isMobileOpen = mobileNav.classList.contains('is-open');
+
+        // Do not hide navbar if menu is open or top of page or focused
+        if (currentScrollY > 60 && !isMobileOpen && !navbar.contains(document.activeElement)) {
+          if (currentScrollY > lastScrollY) {
+            navbar.classList.add('navbar--hidden');
+          } else {
+            navbar.classList.remove('navbar--hidden');
+          }
+        } else {
+          navbar.classList.remove('navbar--hidden');
+        }
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+
+      /* 4. ACCESSIBLE MOBILE MENU TOGGLE */
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileNav = document.getElementById('mobile-navigation');
+      const menuIcon = document.getElementById('menu-icon');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      function toggleMenu(open) {
+        const isOpen = open !== undefined ? open : !mobileNav.classList.contains('is-open');
+        mobileNav.classList.toggle('is-open', isOpen);
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        mobileNav.setAttribute('aria-hidden', !isOpen);
+
+        if (isOpen) {
+          menuIcon.className = 'bi bi-x-lg';
+          menuToggle.setAttribute('aria-label', 'Close navigation menu');
+          document.body.style.overflow = 'hidden';
+        } else {
+          menuIcon.className = 'bi bi-list';
+          menuToggle.setAttribute('aria-label', 'Open navigation menu');
+          document.body.style.overflow = '';
+        }
+      }
+
+      menuToggle.addEventListener('click', () => toggleMenu());
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+          toggleMenu(false);
+          menuToggle.focus();
+        }
+      });
+
+      /* 5. INTERACTIVE FEATURE ROWS */
+      const featureRows = document.querySelectorAll('.feature-row');
+      featureRows.forEach(row => {
+        row.addEventListener('click', () => {
+          featureRows.forEach(r => {
+            r.classList.remove('active');
+            r.setAttribute('aria-pressed', 'false');
+          });
+          row.classList.add('active');
+          row.setAttribute('aria-pressed', 'true');
+        });
+
+        row.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            row.click();
+          }
+        });
+      });
+
+      /* 6. HAIRLINE DECORATIVE ISOMETRIC RENDERER (PLAIN DOM / CANVAS) */
+      const canvas = document.getElementById('hairline-canvas');
+      if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const ctx = canvas.getContext('2d');
+        let angle = 0;
+
+        function drawHairlineIsoCube() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.save();
+          ctx.translate(canvas.width / 2, canvas.height / 2);
+
+          const size = 45;
+          ctx.strokeStyle = '#FF4A0A';
+          ctx.lineWidth = 1.5;
+
+          // Isometric rotation simulation
+          const cosA = Math.cos(angle);
+          const sinA = Math.sin(angle);
+
+          // Top face
+          ctx.beginPath();
+          ctx.moveTo(0, -size);
+          ctx.lineTo(size * 0.86, -size * 0.5 + sinA * 5);
+          ctx.lineTo(0, 0 + sinA * 5);
+          ctx.lineTo(-size * 0.86, -size * 0.5 + sinA * 5);
+          ctx.closePath();
+          ctx.stroke();
+
+          // Left face
+          ctx.beginPath();
+          ctx.moveTo(-size * 0.86, -size * 0.5 + sinA * 5);
+          ctx.lineTo(0, 0 + sinA * 5);
+          ctx.lineTo(0, size + sinA * 5);
+          ctx.lineTo(-size * 0.86, size * 0.5 + sinA * 5);
+          ctx.closePath();
+          ctx.stroke();
+
+          // Right face
+          ctx.beginPath();
+          ctx.moveTo(0, 0 + sinA * 5);
+          ctx.lineTo(size * 0.86, -size * 0.5 + sinA * 5);
+          ctx.lineTo(size * 0.86, size * 0.5 + sinA * 5);
+          ctx.lineTo(0, size + sinA * 5);
+          ctx.closePath();
+          ctx.stroke();
+
+          ctx.restore();
+          angle += 0.02;
+          requestAnimationFrame(drawHairlineIsoCube);
+        }
+
+        drawHairlineIsoCube();
+      }
+
+    });
+  </script>
+</body>
+</html>
