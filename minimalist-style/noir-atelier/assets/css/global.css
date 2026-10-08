@@ -1,0 +1,185 @@
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-family);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Custom WebKit Scrollbar */
+    :root {
+      scrollbar-color: #555552 #151515;
+      scrollbar-width: thin;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #101010;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #444442;
+      border-radius: var(--radius-pill);
+      border: 2px solid #101010;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #686865;
+    }
+
+    /* Selection */
+    ::selection {
+      background-color: var(--color-cta-bg);
+      color: var(--color-cta-text);
+    }
+
+    /* Focus Visible Accessibility */
+    :focus-visible {
+      outline: 2px solid var(--color-focus);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--color-cta-bg);
+      color: var(--color-cta-text);
+      padding: 0.75rem 1.5rem;
+      z-index: 9999;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY & GENERAL COMPONENTS
+       ========================================================================== */
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    p {
+      color: var(--color-text-muted);
+      font-size: var(--font-body);
+      line-height: 1.65;
+    }
+
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      font-size: var(--font-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      width: fit-content;
+      margin-bottom: 1.25rem;
+    }
+
+    .eyebrow-pill i {
+      font-size: 0.7rem;
+      color: var(--color-cta-bg);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-pill);
+      font-size: var(--font-sm);
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      min-height: 48px;
+    }
+
+    .btn-primary {
+      background-color: var(--color-cta-bg);
+      color: var(--color-cta-text);
+    }
+    .btn-primary:hover {
+      background-color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-text);
+      border-color: var(--color-border);
+    }
+    .btn-secondary:hover {
+      border-color: var(--color-text);
+      background-color: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--color-text);
+      transition: all 0.3s ease;
+    }
+    .btn-icon:hover {
+      background: var(--color-cta-bg);
+      color: var(--color-cta-text);
+      transform: scale(1.05);
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    .section-spacing {
+      padding-top: clamp(4rem, 8vw, 8rem);
+      padding-bottom: clamp(4rem, 8vw, 8rem);
+      scroll-margin-top: var(--header-height);
+    }
+
