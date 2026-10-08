@@ -15,6 +15,7 @@ Kumpulan template website yang dikelompokkan berdasarkan visual style dan karakt
 ├── claymorphism-style/
 ├── glassmorphism-style/
 └── minimalist-style/
+    └── noir-atelier/
 ```
 
 Folder style dapat berisi satu atau lebih project website. Setiap project sebaiknya berdiri sendiri dan memiliki dokumentasi, asset, serta struktur source yang jelas.
@@ -42,6 +43,7 @@ brutalist-style/rawframe-studio/
 brutalist-style/limeframe-studio/
 brutalist-style/orange-ledger/
 clean-style/lawncare-studio/
+minimalist-style/noir-atelier/
 minimalist-style/quiet-archive/
 glassmorphism-style/lumen-dashboard/
 ```
