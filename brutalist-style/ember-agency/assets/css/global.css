@@ -1,0 +1,126 @@
+/* Ember Agency global reset and foundations */
+/* ==========================================================================
+       1. DESIGN TOKENS & RESET
+       ========================================================================== */
+    
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scrollbar-color: var(--color-orange) #090909;
+      scrollbar-width: thin;
+    }
+
+    /* Custom WebKit Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090909;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-orange);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-white);
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      background-color: var(--color-bg);
+    }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--color-orange);
+      color: var(--color-white);
+      padding: 0.75rem 1.5rem;
+      z-index: 9999;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* Focus States */
+    :focus-visible {
+      outline: 3px solid var(--color-orange);
+      outline-offset: 4px;
+    }
+
+    /* Typography & Core Elements */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: var(--color-text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-inline: 2.5rem;
+      }
+    }
+
+    .label-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+

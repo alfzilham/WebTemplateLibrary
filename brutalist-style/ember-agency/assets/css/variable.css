@@ -1,0 +1,23 @@
+/* Ember Agency design tokens */
+:root {
+      --color-bg: #F4F1EB;
+      --color-white: #FFFFFF;
+      --color-black: #050505;
+      --color-text: #0A0A0A;
+      --color-orange: #FF4B00;
+      --color-muted: #6B6B6B;
+      --color-border: #171717;
+      --color-border-light: rgba(23, 23, 23, 0.15);
+      --color-dark-card: #0F0F0F;
+
+      --font-display: 'Bebas Neue', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+
+      --header-height: 76px;
+      --container-max: 1440px;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: 200ms var(--ease-out-expo);
+      --transition-normal: 350ms var(--ease-out-expo);
+    }
+
