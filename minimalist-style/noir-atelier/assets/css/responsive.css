@@ -1,0 +1,101 @@
+    @media (min-width: 768px) {
+      .hero-subtitle-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+    @media (min-width: 768px) {
+      .panel-1 {
+        grid-column: span 5;
+        height: 520px;
+      }
+      .panel-2 {
+        grid-column: span 4;
+        height: 440px;
+        margin-top: 3rem;
+      }
+      .panel-3 {
+        grid-column: span 3;
+        height: 580px;
+      }
+    }
+    @media (min-width: 900px) {
+      .about-grid {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 5rem;
+      }
+    }
+    @media (min-width: 900px) {
+      .highlights-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (min-width: 768px) {
+      .projects-header {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .project-card:nth-child(even) {
+        margin-top: 4rem;
+      }
+    }
+    @media (min-width: 768px) {
+      .project-image-wrap {
+        height: 440px;
+      }
+    }
+    @media (min-width: 600px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (min-width: 900px) {
+      .process-container {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+    @media (min-width: 600px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 3rem;
+      }
+    }
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto !important;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .collage-panel img,
+      .highlight-card-bg,
+      .project-image-wrap img {
+        transform: none !important;
+      }
+    }

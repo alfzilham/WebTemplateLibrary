@@ -1,0 +1,40 @@
+    /* ==========================================================================
+       DESIGN TOKENS & RESET
+       ========================================================================== */
+    :root {
+      color-scheme: dark;
+      
+      /* Color Palette */
+      --color-bg: #101010;
+      --color-surface: #171717;
+      --color-surface-raised: #202020;
+      --color-text: #f4f3ef;
+      --color-text-muted: #a4a4a1;
+      --color-text-subtle: #777875;
+      --color-border: #333331;
+      --color-border-strong: #555552;
+      --color-cta-bg: #f1f0ec;
+      --color-cta-text: #111111;
+      --color-focus: #ffffff;
+      --color-accent: #d4cfc5;
+
+      /* Radii */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 9999px;
+
+      /* Typography Scales */
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-xs: clamp(0.72rem, 0.68rem + 0.15vw, 0.82rem);
+      --font-sm: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+      --font-body: clamp(0.98rem, 0.92rem + 0.25vw, 1.08rem);
+      --font-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
+      --font-h2: clamp(1.8rem, 1.4rem + 1.8vw, 3rem);
+      --font-h1: clamp(2.8rem, 1.2rem + 6.5vw, 7.2rem);
+
+      /* Layout */
+      --max-width: 1560px;
+      --header-height: 84px;
+      --gutter: clamp(1rem, 4vw, 3.5rem);
+    }
